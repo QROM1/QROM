@@ -80,7 +80,7 @@ async def banme(leave):
 @zedub.zed_cmd(pattern="بوتي$")
 async def _(event):
     TG_BOT_USERNAME = Config.TG_BOT_USERNAME
-    await event.reply(f"**⎉╎البـوت المسـاعد الخـاص بك هـو** \n {TG_BOT_USERNAME}")
+    await event.edit(f"**⎉╎البـوت المسـاعد الخـاص بك هـو** \n {TG_BOT_USERNAME}")
 
 @zedub.zed_cmd(pattern="حالتي ?(.*)")
 async def zze(event):
