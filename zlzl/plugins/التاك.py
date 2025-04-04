@@ -58,7 +58,7 @@ async def tagall(event):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await edit_or_reply(event, "**⎉╎تم إيقـاف التـاك .. بنجـاح ✓**")
+        await edit_or_reply(event, "**❖╎تم إيقـاف التـاك .. بنجـاح ✓**")
         return
       if usrnum == 5:
         await zedub.send_message(event.chat_id, f"{usrtxt}\n\n- {msg}")
@@ -73,7 +73,7 @@ async def tagall(event):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await edit_or_reply(event, "**⎉╎تم إيقـاف التـاك .. بنجـاح ✓**")
+        await edit_or_reply(event, "**❖╎تم إيقـاف التـاك .. بنجـاح ✓**")
         return
       if usrnum == 5:
         await zedub.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -92,7 +92,7 @@ async def stop_tagall(event):
       moment_worker.remove(event.chat_id)
     except:
       pass
-    return await edit_or_reply(event, '**⎉╎تم إيقـاف التـاك .. بنجـاح ✓**')
+    return await edit_or_reply(event, '**❖╎تم إيقـاف التـاك .. بنجـاح ✓**')
 
 
 @zedub.zed_cmd(pattern="تاك(?:\s|$)([\s\S]*)")
@@ -120,7 +120,7 @@ async def tagall(event):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await edit_or_reply(event, "**⎉╎تم إيقـاف التـاك .. بنجـاح ✓**")
+        await edit_or_reply(event, "**❖╎تم إيقـاف التـاك .. بنجـاح ✓**")
         return
       if usrnum == 5:
         await zedub.send_message(event.chat_id, f"{usrtxt}\n\n- {msg}")
@@ -135,7 +135,7 @@ async def tagall(event):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await edit_or_reply(event, "**⎉╎تم إيقـاف التـاك .. بنجـاح ✓**")
+        await edit_or_reply(event, "**❖╎تم إيقـاف التـاك .. بنجـاح ✓**")
         return
       if usrnum == 5:
         await zedub.send_message(event.chat_id, usrtxt, reply_to=msg)
