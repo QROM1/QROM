@@ -44,11 +44,11 @@ async def echo(event):
     user_name = user.first_name
     user_username = user.username
     if is_echo(chat_id, user_id):
-        return await edit_or_reply(event, "**⎉╎تم تفعيل الازعاج على الشخص .. بنجاح✓**")
+        return await edit_or_reply(event, "**❖╎تم تفعيل الازعاج على الشخص .. بنجاح✓**")
     try:
         addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
     except Exception as e:
-        await edit_delete(zedubevent, f"**⎉╎خطـأ :**\n`{str(e)}`")
+        await edit_delete(zedubevent, f"**❖╎خطـأ :**\n`{str(e)}`")
     else:
         await edit_or_reply(
             zedubevent,
@@ -66,9 +66,9 @@ async def echo(event):
         try:
             remove_echo(chat_id, user_id)
         except Exception as e:
-            await edit_delete(zedubevent, f"**⎉╎خطـأ :**\n`{e}`")
+            await edit_delete(zedubevent, f"**❖╎خطـأ :**\n`{e}`")
         else:
-            await edit_or_reply(event, "**⎉╎تم ايقاف التقليد لهذا المستخدم**")
+            await edit_or_reply(event, "**❖╎تم ايقاف التقليد لهذا المستخدم**")
     else:
         await edit_or_reply(event, "**- لم يتم تفعيل التقليد على هذا المستخدم اصلا**")
 
@@ -85,10 +85,10 @@ async def echo(event):
         try:
             remove_all_echos()
         except Exception as e:
-            await edit_delete(event, f"**⎉╎خطـأ :**\n`{str(e)}`", 10)
+            await edit_delete(event, f"**❖╎خطـأ :**\n`{str(e)}`", 10)
         else:
             await edit_or_reply(
-                event, "**⎉╎تم حذف تقليد جميع المستخدمين في جميع الدردشات.**"
+                event, "**❖╎تم حذف تقليد جميع المستخدمين في جميع الدردشات.**"
             )
     else:
         lecho = get_echos(event.chat_id)
@@ -99,10 +99,10 @@ async def echo(event):
         try:
             remove_echos(event.chat_id)
         except Exception as e:
-            await edit_delete(event, f"**⎉╎خطـأ :**\n`{e}`", 10)
+            await edit_delete(event, f"**❖╎خطـأ :**\n`{e}`", 10)
         else:
             await edit_or_reply(
-                event, "**⎉╎تم حذف تقليد جميع المستخدمين في جميع الدردشات.**"
+                event, "**❖╎تم حذف تقليد جميع المستخدمين في جميع الدردشات.**"
             )
 
 
@@ -110,7 +110,7 @@ async def echo(event):
 async def echo(event):
     input_str = event.pattern_match.group(1)
     private_chats = ""
-    output_str = "**⎉╎قائمـة الاشخـاص المقلـدهـم:\n\n**"
+    output_str = "**❖╎قائمـة الاشخـاص المقلـدهـم:\n\n**"
     if input_str:
         lsts = get_all_echos()
         group_chats = ""
@@ -120,16 +120,16 @@ async def echo(event):
             if echos.chat_type == "Personal":
                 if echos.user_username:
                     private_chats += (
-                        f"⪼ [{echos.user_name}](https://t.me/{echos.user_username})\n"
+                        f"❖ [{echos.user_name}](https://t.me/{echos.user_username})\n"
                     )
                 else:
                     private_chats += (
-                        f"⪼ [{echos.user_name}](tg://user?id={echos.user_id})\n"
+                        f"❖ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                     )
             elif echos.user_username:
-                group_chats += f"⪼ [{echos.user_name}](https://t.me/{echos.user_username}) في دردشة {echos.chat_name} الايدي `{echos.chat_id}`\n"
+                group_chats += f"❖ [{echos.user_name}](https://t.me/{echos.user_username}) في دردشة {echos.chat_name} الايدي `{echos.chat_id}`\n"
             else:
-                group_chats += f"⪼ [{echos.user_name}](tg://user?id={echos.user_id}) في دردشة {echos.chat_name} الايدي `{echos.chat_id}`\n"
+                group_chats += f"❖ [{echos.user_name}](tg://user?id={echos.user_id}) في دردشة {echos.chat_name} الايدي `{echos.chat_id}`\n"
 
         if private_chats != "":
             output_str += "**الدردشات الخاصة**\n" + private_chats + "\n\n"
@@ -143,13 +143,13 @@ async def echo(event):
         for echos in lsts:
             if echos.user_username:
                 private_chats += (
-                    f"⪼ [{echos.user_name}](https://t.me/{echos.user_username})\n"
+                    f"❖ [{echos.user_name}](https://t.me/{echos.user_username})\n"
                 )
             else:
                 private_chats += (
-                    f"⪼ [{echos.user_name}](tg://user?id={echos.user_id})\n"
+                    f"❖ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-        output_str = "**⎉╎الاشخـاص المقلـدهـم في هذه الدردشـه :\n**" + private_chats
+        output_str = "**❖╎الاشخـاص المقلـدهـم في هذه الدردشـه :\n**" + private_chats
 
     await edit_or_reply(event, output_str)
 
