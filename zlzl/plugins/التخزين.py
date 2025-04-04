@@ -39,7 +39,7 @@ async def monito_p_m_s(event):  # sourcery no-metrics
                     LOG_CHATS_.COUNT = 0
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PM_LOGGER_GROUP_ID,
-                    f"**🚹┊المسـتخـدم :** {_format.mentionuser(fullname, sender.id)} .\n**🎟┊الايـدي :** `{chat.id}`\n**🌀┊اليـوزر :** {user_name}\n\n**💌┊قام بـ إرسـال رسائـل جـديـده**",
+                    f"**❖┊المسـتخـدم :** {_format.mentionuser(fullname, sender.id)} .\n**❖┊الايـدي :** `{chat.id}`\n**❖┊اليـوزر :** {user_name}\n\n**❖┊قام بـ إرسـال رسائـل جـديـده**",
                 )
             try:
                 if event.message:
@@ -71,22 +71,22 @@ async def log_tagged_messages(event):
         except Exception as e:
             LOGS.info(str(e))
         messaget = await media_type(event)
-        resalt = f"#التــاكــات\n\n<b>¶ معـلومـات المجمـوعـة :</b>"
-        resalt += f"\n<b>⌔ الاسـم : </b> {hmm.title}"
-        resalt += f"\n<b>⌔ الايـدي : </b> <code>{hmm.id}</code>"
+        resalt = f"#التــاكــات\n\n<b>❖ معـلومـات المجمـوعـة :</b>"
+        resalt += f"\n<b>❖ الاسـم : </b> {hmm.title}"
+        resalt += f"\n<b>❖ الايـدي : </b> <code>{hmm.id}</code>"
         if full is not None:
             fullusername = f"@{full.username}" if full.username else "لايوجد" #Write Code By T.me/ZThon
             fullid = full.id
             fullname = f"{full.first_name} {full.last_name}" if full.last_name else full.first_name
-            resalt += f"\n\n<b>¶ معـلومـات المـرسـل :</b>"
-            resalt += f"\n<b>⌔ الاسـم : </b> {fullname}"
-            resalt += f"\n<b>⌔ الايـدي : </b> <code>{fullid}</code>"
-            resalt += f"\n<b>⌔ اليـوزر : </b> {fullusername}" #Write Code By T.me/ZThon
+            resalt += f"\n\n<b>❖ معـلومـات المـرسـل :</b>"
+            resalt += f"\n<b>❖ الاسـم : </b> {fullname}"
+            resalt += f"\n<b>❖ الايـدي : </b> <code>{fullid}</code>"
+            resalt += f"\n<b>❖ اليـوزر : </b> {fullusername}" #Write Code By T.me/ZThon
         if messaget is not None:
-            resalt += f"\n\n<b>⌔ رسـالـة ميـديـا : </b><code>{messaget}</code>"
+            resalt += f"\n\n<b>❖ رسـالـة ميـديـا : </b><code>{messaget}</code>"
         else:
-            resalt += f"\n\n<b>⌔ الرســالـه : </b>{event.message.message}"
-        resalt += f"\n\n<b>⌔ رابـط الرسـاله : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> اضغـط هنـا</a>"
+            resalt += f"\n\n<b>❖ الرســالـه : </b>{event.message.message}"
+        resalt += f"\n\n<b>❖ رابـط الرسـاله : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> اضغـط هنـا</a>"
         if not event.is_private:
             await event.client.send_message(
                 Config.PM_LOGGER_GROUP_ID,
@@ -122,11 +122,11 @@ async def log(log_text):
             textx = user + log_text.pattern_match.group(1)
             await log_text.client.send_message(BOTLOG_CHATID, textx)
         else:
-            await log_text.edit("**⌔ بالــرد على اي رسـاله لحفظهـا في كـروب التخــزين**")
+            await log_text.edit("**❖ بالــرد على اي رسـاله لحفظهـا في كـروب التخــزين**")
             return
-        await log_text.edit("**⌔ تـم الحفـظ في كـروب التخـزين .. بنجـاح ✓**")
+        await log_text.edit("**❖ تـم الحفـظ في كـروب التخـزين .. بنجـاح ✓**")
     else:
-        await log_text.edit("**⌔ عـذراً .. هـذا الامـر يتطلـب تفعيـل فـار التخـزين اولاً**")
+        await log_text.edit("**❖ عـذراً .. هـذا الامـر يتطلـب تفعيـل فـار التخـزين اولاً**")
     await asyncio.sleep(2)
     await log_text.delete()
 
@@ -147,7 +147,7 @@ async def set_no_log_p_m(event):
         if no_log_pms_sql.is_approved(chat.id):
             no_log_pms_sql.disapprove(chat.id)
             await edit_delete(
-                event, "**⌔ تـم تفعيـل التخـزين لهـذه الدردشـه .. بنجـاح ✓**", 5
+                event, "**❖ تـم تفعيـل التخـزين لهـذه الدردشـه .. بنجـاح ✓**", 5
             )
 
 @zedub.zed_cmd(
@@ -210,8 +210,8 @@ async def set_pmlog(event):
         await event.edit("**- تخزين الخاص بالفعـل معطـل ✓**")
 
 @zedub.zed_cmd(
-    pattern="تخزين الكروبات (تفعيل|تعطيل)$",
-    command=("تخزين الكروبات", plugin_category),
+    pattern="تخزين القروبات (تفعيل|تعطيل)$",
+    command=("تخزين القروبات", plugin_category),
     info={
         "header": "To turn on or turn off group tags logging in pmlogger group.",
         "الاسـتخـدام": [
@@ -238,16 +238,16 @@ async def set_grplog(event):
         if h_type:
             addgvar("GRPLOG", h_type)
             addgvar("GRPLOOG", h_type)
-            await event.edit("**- تخزين الكـروبات بالفعـل ممكـن ✓**")
+            await event.edit("**- تخزين القروبات بالفعـل ممكـن ✓**")
         else:
             addgvar("GRPLOG", h_type)
             delgvar("GRPLOOG")
-            await event.edit("**- تـم تعطيـل تخـزين تاكـات الكـروبات .. بنجـاح✓**")
+            await event.edit("**- تـم تعطيـل تخـزين منشن القروبات .. بنجـاح✓**")
     elif h_type:
         addgvar("GRPLOG", h_type)
         addgvar("GRPLOOG", h_type)
-        await event.edit("**- تـم تفعيـل تخـزين تاكـات الكـروبات .. بنجـاح✓**")
+        await event.edit("**- تـم تفعيـل تخـزين منشن القروبات .. بنجـاح✓**")
     else:
         addgvar("GRPLOG", h_type)
         delgvar("GRPLOOG")
-        await event.edit("**- تخزين الكـروبات بالفعـل معطـل ✓**")
+        await event.edit("**- تخزين القروبات بالفعـل معطـل ✓**")
