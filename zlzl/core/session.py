@@ -7,7 +7,7 @@ from .bothseesion import bothseesion
 from .client import ZedUserBotClient
 from .logger import logging
 
-LOGS = logging.getLogger("زدثــون")
+LOGS = logging.getLogger("الانينمـَوس")
 __version__ = "3.10.3"
 
 loop = None
