@@ -30,6 +30,6 @@ jobs:
           commit_message: 'إعداد تلقائي'
           commit_options: '--no-verify'
           repository: .
-          commit_user_name: ZThon-Bot
-          commit_user_email: ZelzalYah@gmail.com
-          commit_author: ZThon-Bot<ZelzalYah@gmail.com>
+          commit_user_name: ANYNMUS
+          commit_user_email: tc8ccg@gmail.com
+          commit_author: ANYNMUS<tc8ccg@gmail.com>
