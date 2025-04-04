@@ -40,7 +40,7 @@ async def _(event):
         await edit_or_reply(event, f"**⎉╎الدوميـن الخـاص بالرابـط:** {input_str} \n**⎉╎هـو :** \n{response_api}")
     else:
         await edit_or_reply(
-            event, f"**⎉╎عـذراً .. لا يمكنني العثـور علـى دوميـن الرابـط:** {input_str} **على الشبكـة العنكبوتيـه**"
+            event, f"**❖╎عـذراً .. لا يمكنني العثـور علـى دوميـن الرابـط:** {input_str} **على الشبكـة العنكبوتيـه**"
         )
 
 
@@ -71,9 +71,9 @@ async def _(event):
         input_str = f"http://{input_str}"
     sample_url = f"https://da.gd/s?url={input_str}"
     if response_api := requests.get(sample_url).text:
-        await edit_or_reply(event, f"**⎉╎الرابـط المختصر** {response_api} \n**⎉╎الرابـط:** {input_str} \n**⎉╎تم انشـاء الإختصـار .. بنجـاح**", link_preview=False)
+        await edit_or_reply(event, f"**❖╎الرابـط المختصر** {response_api} \n**⎉╎الرابـط:** {input_str} \n**⎉╎تم انشـاء الإختصـار .. بنجـاح**", link_preview=False)
     else:
-        await edit_or_reply(event, "**⎉╎خـطأ بالاختصـار .. الرجـاء المحاولـة لاحقـاً**")
+        await edit_or_reply(event, "**❖╎خـطأ بالاختصـار .. الرجـاء المحاولـة لاحقـاً**")
 
 
 @zedub.zed_cmd(
@@ -107,7 +107,7 @@ async def _(event):
     if str(r.status_code).startswith("3"):
         await edit_or_reply(
             event,
-            f"**⎉╎الرابـط المختصر :** {input_str}\n**⎉╎الرابـط الاصـلي :** {r.headers['Location']}",
+            f"**❖╎الرابـط المختصر :** {input_str}\n**⎉╎الرابـط الاصـلي :** {r.headers['Location']}",
             link_preview=False,
         )
     else:
@@ -151,7 +151,7 @@ async def upload_files(event):
     if rep.media is None:
         return await edit_delete(event, "**⎉╎بالـرد ع ملف لـ رفعـه مباشـرة واعطائك رابـط ...**", 10)
     file = await event.client.download_media(rep, Config.TEMP_DIR)
-    await edit_or_reply(event, "**⎉╎جـارِ الرفـع ... انتظـر**")
+    await edit_or_reply(event, "**❖╎جـارِ الرفـع ... انتظـر**")
     payload = {}
     upfile = {"file": open(file, "rb")}
     response = requests.request("POST", "https://api.anonfiles.com/upload", files=upfile, data = payload)
@@ -161,5 +161,5 @@ async def upload_files(event):
         return await edit_delete(event, f"**- حدث خطأ عند رفع الملف**\n**- الخطـأ:**\n`{er}`")
     url = res["data"]["file"]["url"]["short"]
     size = res["data"]["file"]["metadata"]["size"]["readable"]
-    await edit_or_reply(event, f"**⎉╎تم رفـع الملـف .. بنجـاح ✅**\n**⎉╎حجم الملف المرفوع:** {size}\n**⎉╎الرابـط:** {url}", link_preview=False)
+    await edit_or_reply(event, f"**❖╎تم رفـع الملـف .. بنجـاح ✅**\n**⎉╎حجم الملف المرفوع:** {size}\n**⎉╎الرابـط:** {url}", link_preview=False)
     os.remove(file)
