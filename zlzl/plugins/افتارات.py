@@ -23,21 +23,21 @@ from ..helpers.utils import _format
 from . import reply_id
 
 
-@zedub.zed_cmd(pattern="حالات$")
+@zedub.zed_cmd(pattern="بطاقه$")
 async def _(event):
-    zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل حـالات واتـس ...**")
+    zzevent = await edit_or_reply(event, "**جاري البحث عن بطاقة حظك • • •**")
     try:
         ZTHONR = [
             zlzzl
             async for zlzzl in event.client.iter_messages(
-                "@RSHDO5", filter=InputMessagesFilterVideo
+                "@RSHDO57", filter=InputMessagesFilterVideo
             )
         ]
         aing = await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
             file=random.choice(ZTHONR),
-            caption=f"**🎆┊حـالات واتـس قصيـرة 🧸♥️**",
+            caption=f"**❖┊  تم اختيار بطاقة حظك 💈 **",
         )
         await zzevent.delete()
     except Exception:
