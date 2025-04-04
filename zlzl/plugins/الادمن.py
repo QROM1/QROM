@@ -55,22 +55,22 @@ zel_dev = (55265877, 78083727)
 )
 async def zedgban(event):  # sourcery no-metrics
     "To ban user in every group where you are admin."
-    zede = await edit_or_reply(event, "**╮ ❐... جـاࢪِ حـظـࢪ الشخـص عـام**")
+    zede = await edit_or_reply(event, "**╮ ❖... جـار حـظـر الشخـص عـام**")
     start = datetime.now()
     user, reason = await get_user_from_event(event, zede)
     if not user:
         return
     if user.id == zedub.uid:
-        return await edit_delete(zede, "**⎉╎عـذراً ..لا استطيـع حظـࢪ نفسـي **")
+        return await edit_delete(zede, "**❖╎عـذراً ..لا استطيـع حظـࢪ نفسـي **")
     if user.id in zel_dev:
-        return await edit_delete(zede, "**⎉╎عـذراً ..لا استطيـع حظـࢪ احـد المطـورين عـام **")
+        return await edit_delete(zede, "**❖╎عـذراً ..لا استطيـع حظـر احـد المطـورين عـام **")
     if user.id == 78083727 or user.id == 55265877:
-        return await edit_delete(zede, "**⎉╎عـذراً ..لا استطيـع حظـࢪ مطـور السـورس عـام **")
+        return await edit_delete(zede, "**❖╎عـذراً ..لا استطيـع حظـر مطـور السـورس عـام **")
 
 
     if gban_sql.is_gbanned(user.id):
         await zede.edit(
-            f"**⎉╎المسـتخـدم ↠** [{user.first_name}](tg://user?id={user.id}) \n**⎉╎مـوجــود بالفعــل فـي ↠ قائمـة المحظــورين عــام**"
+            f"**❖╎المسـتخـدم ↠** [{user.first_name}](tg://user?id={user.id}) \n**❖╎مـوجــود بالفعــل فـي ↠ قائمـة المحظــورين عــام**"
         )
     else:
         gban_sql.zedgban(user.id, reason)
@@ -78,9 +78,9 @@ async def zedgban(event):  # sourcery no-metrics
     count = 0
     sandy = len(san)
     if sandy == 0:
-        return await edit_delete(zede, "**⎉╎عــذراً .. يجـب ان تكــون مشـرفـاً فـي مجموعـة واحـده ع الأقــل **")
+        return await edit_delete(zede, "**❖╎عــذراً .. يجـب ان تكــون مشـرفـاً فـي مجموعـة واحـده ع الأقــل **")
     await zede.edit(
-        f"**⎉╎جـاري بـدء حظـر ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**⎉╎مـن ↠ {len(san)} كــروب**"
+        f"**❖╎جـاري بـدء حظـر ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**❖╎مـن ↠ {len(san)} قــروب**"
     )
     for i in range(sandy):
         try:
@@ -91,29 +91,29 @@ async def zedgban(event):  # sourcery no-metrics
             achat = await event.client.get_entity(san[i])
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"**⎉╎عــذراً .. لـيس لـديــك صـلاحيـات فـي ↠**\n**⎉╎كــروب :** {get_display_name(achat)}(`{achat.id}`)",
+                f"**❖╎عــذراً .. لـيس لـديــك صـلاحيـات فـي ↠**\n**❖╎كــروب :** {get_display_name(achat)}(`{achat.id}`)",
             )
     end = datetime.now()
     zedtaken = (end - start).seconds
     if reason:
         await zede.edit(
-            f"**⎉╎المستخـدم :** [{user.first_name}](tg://user?id={user.id})\n\n**⎉╎تم حـظـࢪه عـام مـن {count} كــࢪوب خـلال {zedtaken} ثـانيـه**\n**⎉╎السـبب :** {reason}"
+            f"**❖╎المستخـدم :** [{user.first_name}](tg://user?id={user.id})\n\n**❖╎تم حـظـره عـام مـن {count} قــروب خـلال {zedtaken} ثـانيـه**\n**⎉╎السـبب :** {reason}"
         )
     else:
         await zede.edit(
-            f"**╮ ❐... الشخـص :** [{user.first_name}](tg://user?id={user.id})\n\n**╮ ❐... تـم حـظـࢪه عـام مـن {count} كــࢪوب خـلال {zedtaken} ثـانيـه**"
+            f"**╮ ❐... الشخـص :** [{user.first_name}](tg://user?id={user.id})\n\n**╮ ❐... تـم حـظـࢪه عـام مـن {count} قــروب خـلال {zedtaken} ثـانيـه**"
         )
     if BOTLOG and count != 0:
         reply = await event.get_reply_message()
         if reason:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"#الحظــࢪ_العـــام\
+                f"#الحظــر_العـــام\
                 \n**المعلـومـات :-**\
                 \n**- الشخــص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**- الايــدي : **`{user.id}`\
                 \n**- الســبب :** `{reason}`\
-                \n**- تـم حظـره مـن**  {count}  **كــروب**\
+                \n**- تـم حظـره مـن**  {count}  **قٰـروب**\
                 \n**- الــوقت المسـتغــࢪق :** {zedtaken} **ثــانيـه**",
             )
         else:
@@ -123,7 +123,7 @@ async def zedgban(event):  # sourcery no-metrics
                 \n**المعلـومـات :-**\
                 \n**- الشخــص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**- الايــدي : **`{user.id}`\
-                \n**- تـم حظـره مـن**  {count}  **كــروب**\
+                \n**- تـم حظـره مـن**  {count}  **قــروب**\
                 \n**- الــوقت المسـتغــࢪق :** {zedtaken} **ثــانيـه**",
             )
         with contextlib.suppress(BadRequestError):
@@ -153,7 +153,7 @@ async def zedgban(event):
     else:
         return await edit_delete(
             zede,
-            f"**⎉╎المسـتخـدم ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**⎉╎ليـس مـوجــود فـي ↠ قائمـة المحظــورين عــام**",
+            f"**❖╎المسـتخـدم ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**❖╎ليـس مـوجــود فـي ↠ قائمـة المحظــورين عــام**",
         )
     san = await admin_groups(event.client)
     count = 0
@@ -161,7 +161,7 @@ async def zedgban(event):
     if sandy == 0:
         return await edit_delete(zede, "**⎉╎عــذراً .. يجـب ان تكــون مشـرفـاً فـي مجموعـة واحـده ع الأقــل **")
     await zede.edit(
-        f"**⎉╎جـاري الغــاء حظـر ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**⎉╎مـن ↠ {len(san)} كــروب**"
+        f"**❖╎جـاري الغــاء حظـر ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**⎉╎مـن ↠ {len(san)} كــروب**"
     )
     for i in range(sandy):
         try:
@@ -172,17 +172,17 @@ async def zedgban(event):
             achat = await event.client.get_entity(san[i])
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"**⎉╎عــذراً .. لـيس لـديــك صـلاحيـات فـي ↠**\n**⎉╎كــروب :** {get_display_name(achat)}(`{achat.id}`)",
+                f"**❖╎عــذراً .. لـيس لـديــك صـلاحيـات فـي ↠**\n**❖╎قــروب :** {get_display_name(achat)}(`{achat.id}`)",
             )
     end = datetime.now()
     zedtaken = (end - start).seconds
     if reason:
         await zede.edit(
-            f"**⎉╎المستخـدم :** [{user.first_name}](tg://user?id={user.id})\n\n**⎉╎تم الغــاء حـظـࢪه عـام مـن {count} كــࢪوب خـلال {zedtaken} ثـانيـه**\n**⎉╎السـبب :** {reason}"
+            f"**❖╎المستخـدم :** [{user.first_name}](tg://user?id={user.id})\n\n**❖╎تم الغــاء حـظـره عـام مـن {count} قــࢪوب خـلال {zedtaken} ثـانيـه**\n**⎉╎السـبب :** {reason}"
         )
     else:
         await zede.edit(
-            f"**⎉╎المستخـدم :** [{user.first_name}](tg://user?id={user.id})\n\n**⎉╎تم الغــاء حـظـࢪه عـام مـن {count} كــࢪوب خـلال {zedtaken} ثـانيـه**"
+            f"**❖╎المستخـدم :** [{user.first_name}](tg://user?id={user.id})\n\n**❖╎تم الغــاء حـظـࢪه عـام مـن {count} قــࢪوب خـلال {zedtaken} ثـانيـه**"
         )
 
     if BOTLOG and count != 0:
@@ -194,7 +194,7 @@ async def zedgban(event):
                 \n**- الشخــص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**- الايــدي : **`{user.id}`\
                 \n**- الســبب :** `{reason}`\
-                \n**- تـم الغــاء حظـره مـن  {count} كــروب**\
+                \n**- تـم الغــاء حظـره مـن  {count} قــروب**\
                 \n**- الــوقت المسـتغــࢪق :** {zedtaken} **ثــانيـه**",
             )
         else:
@@ -204,7 +204,7 @@ async def zedgban(event):
                 \n**المعلـومـات :-**\
                 \n**- الشخــص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**- الايــدي : **`{user.id}`\
-                \n**- تـم الغــاء حظـره مـن  {count} كــروب**\
+                \n**- تـم الغــاء حظـره مـن  {count} قــروب**\
                 \n**- الــوقت المسـتغــࢪق :** {zedtaken} **ثــانيـه**",
             )
 
@@ -224,10 +224,10 @@ async def gablist(event):
     if len(gbanned_users) > 0:
         for a_user in gbanned_users:
             if a_user.reason:
-                GBANNED_LIST += f"**⎉╎المستخـدم :**  [{a_user.chat_id}](tg://user?id={a_user.chat_id}) \n**⎉╎سـبب الحظـر : {a_user.reason} ** \n\n"
+                GBANNED_LIST += f"**❖╎المستخـدم :**  [{a_user.chat_id}](tg://user?id={a_user.chat_id}) \n**❖╎سـبب الحظـر : {a_user.reason} ** \n\n"
             else:
                 GBANNED_LIST += (
-                    f"**⎉╎المستخـدم :**  [{a_user.chat_id}](tg://user?id={a_user.chat_id}) \n**⎉╎سـبب الحظـر : لا يـوجـد ** \n\n"
+                    f"**❖╎المستخـدم :**  [{a_user.chat_id}](tg://user?id={a_user.chat_id}) \n**❖╎سـبب الحظـر : لا يـوجـد ** \n\n"
                 )
     else:
         GBANNED_LIST = "**- لايــوجـد محظــورين عــام بعــد**"
@@ -261,7 +261,7 @@ async def catgkick(event):  # sourcery no-metrics
     if sandy == 0:
         return await edit_delete(zede, "**⎉╎عــذراً .. يجـب ان تكــون مشـرفـاً فـي مجموعـة واحـده ع الأقــل **")
     await zede.edit(
-        f"**⎉╎بـدء طـرد ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**⎉╎فـي ↠ {len(san)} كــروب**"
+        f"**❖╎بـدء طـرد ↠** [{user.first_name}](tg://user?id={user.id}) **\n\n**❖╎فـي ↠ {len(san)} قــروب**"
     )
     for i in range(sandy):
         try:
@@ -272,7 +272,7 @@ async def catgkick(event):  # sourcery no-metrics
             achat = await event.client.get_entity(san[i])
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"**⎉╎عــذراً .. لـيس لـديــك صـلاحيـات فـي ↠**\n**⎉╎كــروب :** {get_display_name(achat)}(`{achat.id}`)",
+                f"**❖╎عــذراً .. لـيس لـديــك صـلاحيـات فـي ↠**\n**❖╎قــروب :** {get_display_name(achat)}(`{achat.id}`)",
             )
     end = datetime.now()
     zedtaken = (end - start).seconds
@@ -295,7 +295,7 @@ async def catgkick(event):  # sourcery no-metrics
                 \n**- الشخــص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**- الايــدي : **`{user.id}`\
                 \n**- الســبب :** `{reason}`\
-                \n**- تـم طــرده مـن**  {count}  **كــروب**\
+                \n**- تـم طــرده مـن**  {count}  **قــروب**\
                 \n**- الــوقت المسـتغــࢪق :** {zedtaken} **ثــانيـه**",
             )
         else:
@@ -305,7 +305,7 @@ async def catgkick(event):  # sourcery no-metrics
                 \n**المعلـومـات :-**\
                 \n**- الشخــص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**- الايــدي : **`{user.id}`\
-                \n**- تـم طــرده مـن**  {count}  **كــروب**\
+                \n**- تـم طــرده مـن**  {count}  **قــروب**\
                 \n**- الــوقت المسـتغــࢪق :** {zedtaken} **ثــانيـه**",
             )
         if reply:
@@ -481,18 +481,18 @@ async def promote(event):
         rank = "admin"
     if not user:
         return
-    zzevent = await edit_or_reply(event, "**╮ ❐  جـارِ  ࢪفعـه مشـرف  . . .❏╰**")
+    zzevent = await edit_or_reply(event, "**╮ ❐  جـارِ  رفعـه مشـرف  . . .❏╰**")
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
         return await zzevent.edit(NO_PERM)
-    await zzevent.edit(f"**⎉╎المستخـدم** [{user.first_name}](tg://user?id={user.id}) \n**⎉╎تم رفعـه مشـرفـاً .. بنجـاح✓**")
+    await zzevent.edit(f"**❖╎المستخـدم** [{user.first_name}](tg://user?id={user.id}) \n**❖╎تم رفعـه مشـرفـاً .. بنجـاح✓**")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
             f"#رفــع_مشــرف\
-            \n**⎉╎الشخـص :** [{user.first_name}](tg://user?id={user.id})\
-            \n**⎉╎المجمــوعــه :** {get_display_name(await event.get_chat())} (`{event.chat_id}`)",
+            \n**❖╎الشخـص :** [{user.first_name}](tg://user?id={user.id})\
+            \n**❖╎المجمــوعــه :** {get_display_name(await event.get_chat())} (`{event.chat_id}`)",
         )
 
 
@@ -523,13 +523,13 @@ async def promote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
         return await zzevent.edit(NO_PERM)
-    await zzevent.edit(f"**⎉╎المستخـدم** [{user.first_name}](tg://user?id={user.id}) \n**⎉╎تم رفعـه مشـرفـاً بكل الصلاحيـات ✓**")
+    await zzevent.edit(f"**❖╎المستخـدم** [{user.first_name}](tg://user?id={user.id}) \n**❖╎تم رفعـه مشـرفـاً بكل الصلاحيـات ✓**")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
             f"#رفــع_مشــرف\
-            \n**⎉╎الشخـص :** [{user.first_name}](tg://user?id={user.id})\
-            \n**⎉╎المجمــوعــه :** {get_display_name(await event.get_chat())} (`{event.chat_id}`)",
+            \n**❖╎الشخـص :** [{user.first_name}](tg://user?id={user.id})\
+            \n**❖╎المجمــوعــه :** {get_display_name(await event.get_chat())} (`{event.chat_id}`)",
         )
 
 
@@ -566,8 +566,8 @@ async def promote(event):
         await event.client.send_message(
             BOTLOG_CHATID,
             f"#رفــع_مشــرف\
-            \n**⎉╎الشخـص :** [{user.first_name}](tg://user?id={user.id})\
-            \n**⎉╎المجمــوعــه :** {get_display_name(await event.get_chat())} (`{event.chat_id}`)",
+            \n**❖╎الشخـص :** [{user.first_name}](tg://user?id={user.id})\
+            \n**❖╎المجمــوعــه :** {get_display_name(await event.get_chat())} (`{event.chat_id}`)",
         )
 
 
@@ -596,13 +596,13 @@ async def demote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
         return await zzevent.edit(NO_PERM)
-    await zzevent.edit("**⎉╎المستخـدم** [{user.first_name}](tg://user?id={user.id}) \n**⎉╎تم تنـزيلـه مشـرف .. بنجـاح✓**")
+    await zzevent.edit("**❖╎المستخـدم** [{user.first_name}](tg://user?id={user.id}) \n**❖╎تم تنـزيلـه مشـرف .. بنجـاح✓**")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
             f"#تنـزيــل_مشــرف\
-            \n**⎉╎الشخـص : ** [{user.first_name}](tg://user?id={user.id})\
-            \n**⎉╎المجمــوعــه :** {get_display_name(await event.get_chat())}(`{event.chat_id}`)",
+            \n**❖╎الشخـص : ** [{user.first_name}](tg://user?id={user.id})\
+            \n**❖╎المجمــوعــه :** {get_display_name(await event.get_chat())}(`{event.chat_id}`)",
         )
 
 
@@ -610,15 +610,15 @@ async def demote(event):
 async def _ban_person(event):
     user, reason = await get_user_from_event(event)
     if reason and reason == "عام":
-        return await edit_delete(event, "**⪼ لـ الحظـر العـام ارسـل** `.ح عام`")
+        return await edit_delete(event, "❖**⪼ لـ الحظـر العـام ارسـل** `.ح عام`")
     if not user:
         return
     if user.id == event.client.uid:
-        return await edit_delete(event, "**⪼ عـذراً ..لا استطيـع حظـࢪ نفسـي 𓆰**")
+        return await edit_delete(event, "**⪼ عـذراً ..لا استطيـع حظـࢪ نفسـي ❖**")
     if user.id == 78083727 or user.id == 55265877:
-        return await edit_delete(event, "**╮ ❐ دي لا يمڪنني حظـر مطـور السـورس  ❏╰**")
+        return await edit_delete(event, "**╮ ❐  لا يمڪنني حظـر مطـور السـورس  ❏╰**")
     if user.id in zel_dev:
-        return await edit_delete(event, "**╮ ❐ دي لا يمڪنني حظـر مطـوريـن السـورس  ❏╰**")
+        return await edit_delete(event, "**╮ ❐  لا يمڪنني حظـر مطـوريـن السـورس  ❏╰**")
     zedevent = await edit_or_reply(event, "**╮ ❐... جـاࢪِ الحـظـࢪ ...❏╰**")
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS))
@@ -630,19 +630,19 @@ async def _ban_person(event):
             await event.client.send_file(
                 event.chat_id,
                 gvarstatus("PC_BANE"),
-                caption=f"**⎉╎المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**⎉╎تم حظـࢪه بنجـاح ☑️**\n\n**⎉╎السـبب :** `{reason}`",
+                caption=f"**❖╎المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**❖╎تم حظـࢪه بنجـاح ☑️**\n\n**⎉╎السـبب :** `{reason}`",
             )
             await zedevent.delete()
         else:
             await zedevent.edit(
-                f"**⎉╎المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**⎉╎تم حظـࢪه بنجـاح ☑️**\n\n**⎉╎السـبب :** `{reason}`",
+                f"**❖╎المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**⎉╎تم حظـࢪه بنجـاح ☑️**\n\n**❖╎السـبب :** `{reason}`",
             )
     else:
         if gvarstatus("PC_BANE") is not None:
             await event.client.send_file(
                 event.chat_id,
                 gvarstatus("PC_BANE"),
-                caption=f"**⎉╎المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**⎉╎تم حظــࢪه بنجـاح ☑️**\n\n"
+                caption=f"**❖╎المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**⎉╎تم حظــࢪه بنجـاح ☑️**\n\n"
             )
             await zedevent.delete()
         else:
@@ -654,9 +654,9 @@ async def _ban_person(event):
             await event.client.send_message(
                 BOTLOG_CHATID,
                 f"#الحظــࢪ\
-                \n**⎉╎المحظـور :** [{user.first_name}](tg://user?id={user.id})\
-                \n**⎉╎الدردشــه :** {get_display_name(await event.get_chat())}(`{event.chat_id}`)\
-                \n**⎉╎السـبب :** {reason}",
+                \n**╎المحظـور :** [{user.first_name}](tg://user?id={user.id})\
+                \n**❖╎الدردشــه :** {get_display_name(await event.get_chat())}(`{event.chat_id}`)\
+                \n**╎السـبب :** {reason}",
             )
         else:
             await event.client.send_message(
