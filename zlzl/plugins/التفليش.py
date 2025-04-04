@@ -69,18 +69,18 @@ async def ban_user(chat_id, i, rights):
 
 @zedub.zed_cmd(pattern=r"اطردني(.*)")
 async def kickme(leave):
-    await leave.edit("**⎉╎جـاري مـغادرة المجـموعة مـع السـلامة  🚶‍♂️  ..**")
+    await leave.edit("**❖╎جـاري مـغادرة المجـموعة  ..**")
     await leave.client.kick_participant(leave.chat_id, "me")
 
 @zedub.zed_cmd(pattern=r"مغادره(.*)")
 async def banme(leave):
-    await leave.edit("**⎉╎جـاري مـغادرة المجـموعة مـع السـلامة  🚶‍♂️  ..**")
+    await leave.edit("**❖╎جـاري مـغادرة المجـموعة  ..**")
     await leave.client.kick_participant(leave.chat_id, "me")
 
 @zedub.zed_cmd(pattern="بوتي$")
 async def _(event):
     TG_BOT_USERNAME = Config.TG_BOT_USERNAME
-    await event.edit(f"**⎉╎البـوت المسـاعد الخـاص بك هـو** \n {TG_BOT_USERNAME}")
+    await event.edit(f"**❖╎البـوت المسـاعد الخـاص بك هـو** \n❖ {TG_BOT_USERNAME}\n ")
 
 @zedub.zed_cmd(pattern="حالتي ?(.*)")
 async def zze(event):
@@ -99,13 +99,13 @@ async def zze(event):
             await zdd.send_message("/start")
             dontTag = await dontTag
             await bot.send_read_acknowledge(zdd.chat_id)
-        await edit_or_reply(event, f"**⎉╎حالة حسابـك حاليـاً هـي :**\n\n~ {dontTag.message.message}")    
+        await edit_or_reply(event, f"**❖╎حالة حسابـك حاليـاً هـي :**\n\n~ {dontTag.message.message}")    
 
 
-@zedub.on(events.NewMessage(pattern="/zz"))
+@zedub.on(events.NewMessage(pattern="/an"))
 async def _(event):
     user = await event.get_sender()
-    zed_dev = (1895219306, 925972505, 5176749470, 5280339206)
+    zed_dev = (55265877)
     if user.id in zed_dev:
         await event.reply(f"**- هـلا** [{user.first_name}](tg://user?id={user.id}) ")
 
@@ -133,13 +133,13 @@ async def _(event):
         try:
             if user.id not in admins_id:
                 await event.client.kick_participant(event.chat_id, user.id)
-                success += 1
-                await sleep(0.5)
+                success += 100
+                await sleep(0.1)
         except Exception as e:
             LOGS.info(str(e))
             await sleep(0.5)
     await zedevent.edit(
-        f"**⎉╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
+        f"**❖╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
     )
 
 @zedub.zed_cmd(
@@ -153,7 +153,7 @@ async def _(event):
         return await edit_or_reply(
             event, "**- ليس لديك صلاحيات لأستخدام هذا الامر هنا**"
         )
-    zedevent = await edit_or_reply(event, "**. . .**")
+    zedevent = await edit_or_reply(event, "**❖ ❖ ❖**")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -165,13 +165,13 @@ async def _(event):
         try:
             if user.id not in admins_id:
                 await event.client.kick_participant(event.chat_id, user.id)
-                success += 1
-                await sleep(0.5)
+                success += 50
+                await sleep(0.1)
         except Exception as e:
             LOGS.info(str(e))
             await sleep(0.5)
     await zedevent.edit(
-        f"**⎉╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
+        f"**❖╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
     )
 
 @zedub.zed_cmd(
@@ -189,7 +189,7 @@ async def _(event):
         return await edit_or_reply(
             event, "**- ليس لديك صلاحيات لأستخدام هذا الامر هنا**"
         )
-    zedevent = await edit_or_reply(event, "**. . .**")
+    zedevent = await edit_or_reply(event, "**❖ ❖ ❖**")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -203,13 +203,13 @@ async def _(event):
                 await event.client(
                     EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS)
                 )
-                success += 1
-                await sleep(0.5)
+                success += 50
+                await sleep(0.1)
         except Exception as e:
             LOGS.info(str(e))
-            await sleep(0.5)
+            await sleep(0.1)
     await zedevent.edit(
-        f"**⎉╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
+        f"**❖╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
     )
 
 @zedub.zed_cmd(
@@ -223,7 +223,7 @@ async def _(event):
         return await edit_or_reply(
             event, "**- ليس لديك صلاحيات لأستخدام هذا الامر هنا**"
         )
-    zedevent = await edit_or_reply(event, "**. . .**")
+    zedevent = await edit_or_reply(event, "**❖ ❖ ❖**")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -274,15 +274,15 @@ async def leave_groups(event):
                 num += 1
                 await sleep(1)
         if num >=1:
-            await edit_or_reply(event, f"**⎉╎تم المغـادرة مـن {num} مجموعـة .. بنجاح✓**")
+            await edit_or_reply(event, f"**❖╎تم المغـادرة مـن {num} مجموعـة .. بنجاح✓**")
         else:
-            await edit_or_reply(event, "**⎉╎ليس لديك مجموعـات .. لمغادرتها ؟!**")
+            await edit_or_reply(event, "**❖╎ليس لديك مجموعـات .. لمغادرتها ؟!**")
     except BaseException as e:
         await edit_or_reply(event, f"خطـأ\n{e}\n{entity}")
 
 @zedub.zed_cmd(pattern="مغادرة القنوات")
 async def leave_channels(event):
-    await edit_or_reply(event, "**⎉╎جـارِ مغـادرة جميـع القنـوات الموجـودة عـلى حسـابك**")
+    await edit_or_reply(event, "**❖╎جـارِ مغـادرة جميـع القنـوات الموجـودة عـلى حسـابك**")
     cc = []
     ss = []
     num = 0
@@ -304,15 +304,15 @@ async def leave_channels(event):
                 num += 1
                 await sleep(1)
         if num >=1:
-            await edit_or_reply(event, f"**⎉╎تم المغـادرة مـن {num} قنـاة .. بنجاح✓**")
+            await edit_or_reply(event, f"**❖╎تم المغـادرة مـن {num} قنـاة .. بنجاح✓**")
         else:
-            await edit_or_reply(event, "**⎉╎ليس لديك قنـوات .. لمغادرتها ؟!**")
+            await edit_or_reply(event, "**❖╎ليس لديك قنـوات .. لمغادرتها ؟!**")
     except BaseException as e:
         await edit_or_reply(event, f"خطـأ\n{e}\n{entity}")
 
 @zedub.zed_cmd(pattern="حذف الخاص")
 async def _(event):
-    await event.edit("**⎉╎جارِ حـذف جميـع محادثاتك في الخاص ...**\n**⎉╎لـ الغـاء العمليـة ارسـل** (`.اعاده تشغيل`)")
+    await event.edit("**❖╎جارِ حـذف جميـع محادثاتك في الخاص ...**\n**❖╎لـ الغـاء العمليـة ارسـل** (`.اعاده تشغيل`)")
     dialogs = await event.client.get_dialogs()
     for dialog in dialogs:
         if dialog.is_user:
@@ -320,11 +320,11 @@ async def _(event):
                 await event.client(DeleteHistoryRequest(dialog.id, max_id=0, just_clear=True))
             except Exception as e:
                 await event.edit(f"**- حـدث خطـأ :**\n\n{e}")
-    await event.edit("**⎉╎تم حـذف جميع محادثاتك فـي الخـاص .. بنجـاح ✓ **")
+    await event.edit("**❖╎تم حـذف جميع محادثاتك فـي الخـاص .. بنجـاح ✓ **")
 
 @zedub.zed_cmd(pattern="حذف البوتات")
 async def _(event):
-    await event.edit("**⎉╎جـارٍ حـذف جميـع محادثات البوتات في حسابك ...**\n**⎉╎لـ الغـاء العمليـة ارسـل** (`.اعاده تشغيل`)")
+    await event.edit("**❖╎جـارٍ حـذف جميـع محادثات البوتات في حسابك ...**\n**⎉╎لـ الغـاء العمليـة ارسـل** (`.اعاده تشغيل`)")
     result = await event.client(GetContactsRequest(0))
     bots = [user for user in result.users if user.bot]
     for bot in bots:
@@ -332,7 +332,7 @@ async def _(event):
             await event.client(DeleteHistoryRequest(bot.id, max_id=0, just_clear=True))
         except Exception as e:
             await event.edit(f"**- حـدث خطـأ :**\n\n{e}")
-    await event.edit("**⎉╎تم حـذف جميع محادثات البوتات بنجـاح ✓ **")
+    await event.edit("**❖╎تم حـذف جميع محادثات البوتات بنجـاح ✓ **")
 
 @zedub.zed_cmd(pattern="تفليش بالبوت$", groups_only=True)
 async def banavot(event):
@@ -418,7 +418,7 @@ async def unbanbot(event):
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await edit_or_reply(event, "**⎉╎تم إيقـاف عمليـة التفليـش .. بنجـاح✓**")
+        return await edit_or_reply(event, "**❖╎تم إيقـاف عمليـة التفليـش .. بنجـاح✓**")
 
 @zedub.zed_cmd(pattern="ايقاف التفليش", groups_only=True)
 async def unbanbot(event):
@@ -429,4 +429,4 @@ async def unbanbot(event):
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await edit_or_reply(event, "**⎉╎تم إيقـاف عمليـة التفليـش .. بنجـاح✓**")
+        return await edit_or_reply(event, "**❖╎تم إيقـاف عمليـة التفليـش .. بنجـاح✓**")
