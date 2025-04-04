@@ -27,14 +27,14 @@ tr = Config.COMMAND_HAND_LER
 scc = "secret"
 hmm = "همسـة"
 ymm = "يستطيـع"
-fmm = "فتـح الهمسـه 🗳"
-dss = "⌔╎هو فقط من يستطيع ࢪؤيتهـا"
-hss = "ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗭𝗧𝗛𝗢𝗡 - **همسـة سـࢪيـه** 📠\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎الهمسـة لـ**"
+fmm = "فتـح الهمسـه 🔒"
+dss = "❖╎هو فقط من يستطيع ࢪؤيتهـا"
+hss = "ᯓ 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 - **همسـة سريه** 📠\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎الهمسـة لـ**"
 nmm = "همسـه سريـه"
-mnn = "ارسـال همسـه سريـه لـ (شخـص/اشخـاص).\nعبـر زدثــون"
+mnn = "ارسـال همسـه سريـه لـ (شخـص/اشخـاص).\nعبـر انينمـَوس"
 bmm = "اضغـط للـرد"
-ttt = "ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗭𝗧𝗛𝗢𝗡 - همسـة سـࢪيـه\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n⌔╎اضغـط الـزر بالاسفـل ⚓\n⌔╎لـ اࢪسـال همسـه سـࢪيـه الى"
-ddd = "💌"
+ttt = "ᯓ 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 - همسـة سـࢪيـه\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n❖╎اضغـط الـزر بالاسفـل ⚓\n❖╎لـ اࢪسـال همسـه سـࢪيـه الى"
+ddd = "✉️"
 bbb = None
 
 # Copyright (C) 2023 Zilzalll . All Rights Reserved
@@ -115,7 +115,7 @@ async def inline_handler(event):
                 json.dump(new_msg, open(old_msg, "w"))
         elif string == "zelzal":
             if gvarstatus("hmsa_id"):
-                bbb = [(Button.switch_inline("اضغـط هنـا", query=("secret " + gvarstatus("hmsa_id") + " \nهلو"), same_peer=True))]
+                bbb = [(Button.switch_inline("اضغـط هنـا", query=("secret " + gvarstatus("hmsa_id") + " \nاكتب الهمسه"), same_peer=True))]
             else:
                 return
             results = []
@@ -165,7 +165,7 @@ async def inline_handler(event):
             new_msg = {
                 str(timestamp): {"userid": user_list, "text": query}
             }  # Code by T.me/zzzzl1l
-            buttons = [[Button.inline(info_type[2], data=f"{scc}_{timestamp}")],[Button.switch_inline(bmm, query=f"secret {malathid} \nهلو", same_peer=True)]]
+            buttons = [[Button.inline(info_type[2], data=f"{scc}_{timestamp}")],[Button.switch_inline(bmm, query=f"secret {malathid} \nاكتب الهمسة", same_peer=True)]]
             result = builder.article(
                 title=f"{hmm} {zilzal}",
                 description=f"{dss}",
@@ -181,7 +181,7 @@ async def inline_handler(event):
                 json.dump(new_msg, open(old_msg, "w"))
         elif string == "zelzal":
             if gvarstatus("hmsa_id"):
-                bbb = [(Button.switch_inline("اضغـط هنـا", query=("secret " + gvarstatus("hmsa_id") + " \nهلو"), same_peer=True))]
+                bbb = [(Button.switch_inline("اضغـط هنـا", query=("secret " + gvarstatus("hmsa_id") + " \nاكتب الهمسة"), same_peer=True))]
             else:
                 return
             results = []
