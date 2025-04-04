@@ -57,16 +57,7 @@ Q = (
 async def dog(dog):
     await dog.edit(Q)
 
-P = (
-    "┈┏━╮╭━┓┈╭━━━━╮\n"
-    "┈┃┏┗┛┓┃╭┫U   خنـزيـر┃\n"
-    "┈╰┓▋▋┏╯╯╰━━━━╯\n"
-    "╭━┻╮╲┗━━━━╮╭╮┈\n"
-    "┃▎▎┃╲╲╲╲╲╲┣━╯┈\n"
-    "╰━┳┻▅╯╲╲╲╲┃┈┈┈\n"
-    "┈┈╰━┳┓┏┳┓┏╯┈┈┈\n"
-    "┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n"
-)
+P = (❖)
 
 
 F = (
@@ -118,7 +109,7 @@ async def homer(homer):
     await homer.edit(H)
 
 
-@zedub.zed_cmd(pattern="خنزير")
+@zedub.zed_cmd(pattern="الشعار")
 async def pig(pig):
     await pig.edit(P)
 
@@ -593,7 +584,7 @@ async def cmd(zelzallll):
 @zedub.zed_cmd(pattern="افكر$")
 async def _(event):
     event = await edit_or_reply(event, ".🧐")
-    deq = deque(list("🤔🧐🤔🧐🤔🧐"))
+    deq = deque(list("🤔🧐🤔🧐🤔🧐."))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
@@ -603,17 +594,17 @@ async def _(event):
 @zedub.zed_cmd(pattern="متت$")
 async def _(event):
     event = await edit_or_reply(event, ".🤣")
-    deq = deque(list("😂🤣😂🤣😂🤣"))
+    deq = deque(list("😂🤣😂🤣😂🤣."))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
         deq.rotate(1)
 
 
-@zedub.zed_cmd(pattern="ضايج$")
+@zedub.zed_cmd(pattern="افسي$")
 async def _(event):
     event = await edit_or_reply(event, "🙂.")
-    deq = deque(list("😁☹️😁☹️😁☹️😁"))
+    deq = deque(list("😁☹️😁☹️😁☹️😁."))
     for _ in range(48):
         await asyncio.sleep(0.4)
         await event.edit("".join(deq))
@@ -623,7 +614,7 @@ async def _(event):
 @zedub.zed_cmd(pattern="ساعه$")
 async def _(event):
     event = await edit_or_reply(event, "🕙.")
-    deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
+    deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛."))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
@@ -633,7 +624,7 @@ async def _(event):
 @zedub.zed_cmd(pattern="مح$")
 async def _(event):
     event = await edit_or_reply(event, "😗.")
-    deq = deque(list("😗😙😚😚😘"))
+    deq = deque(list("😗😙😚😚😘."))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
@@ -643,7 +634,7 @@ async def _(event):
 @zedub.zed_cmd(pattern="قلب$")
 async def _(event):
     event = await edit_or_reply(event, "🧡.")
-    deq = deque(list("❤️🧡💛💚💙💜🖤"))
+    deq = deque(list("❤️🧡💛💚💙🖤."))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
@@ -653,7 +644,7 @@ async def _(event):
 @zedub.zed_cmd(pattern="جيم$")
 async def _(event):
     event = await edit_or_reply(event, "جيم")
-    deq = deque(list("🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍"))
+    deq = deque(list("🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍🏃‍🏋‍🤸.‍"))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
@@ -663,7 +654,7 @@ async def _(event):
 @zedub.zed_cmd(pattern=f"ارض$")
 async def _(event):
     event = await edit_or_reply(event, "🌏.")
-    deq = deque(list("🌏🌍🌎🌎🌍🌏🌍🌎"))
+    deq = deque(list("🌏🌍🌎🌎🌍🌏🌍🌎."))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
@@ -673,7 +664,7 @@ async def _(event):
 @zedub.zed_cmd(pattern="قمر$")
 async def _(event):
     event = await edit_or_reply(event, "🌗.")
-    deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
+    deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖."))
     for _ in range(48):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
@@ -708,38 +699,38 @@ async def _(event):
     animation_ttl = range(96)
     await event.edit("tmoon..")
     animation_chars = [
-        "🌗",
-        "🌘",
-        "🌑",
-        "🌒",
-        "🌓",
-        "🌔",
-        "🌕",
-        "🌖",
-        "🌗",
-        "🌘",
-        "🌑",
-        "🌒",
-        "🌓",
-        "🌔",
-        "🌕",
-        "🌖",
-        "🌗",
-        "🌘",
-        "🌑",
-        "🌒",
-        "🌓",
-        "🌔",
-        "🌕",
-        "🌖",
-        "🌗",
-        "🌘",
-        "🌑",
-        "🌒",
-        "🌓",
-        "🌔",
-        "🌕",
-        "🌖",
+        "🌗.",
+        "🌘.",
+        "🌑.",
+        "🌒.",
+        "🌓.",
+        "🌔.",
+        "🌕.",
+        "🌖.",
+        "🌗.",
+        "🌘.",
+        "🌑.",
+        "🌒.",
+        "🌓.",
+        "🌔.",
+        "🌕.",
+        "🌖.",
+        "🌗.",
+        "🌘.",
+        "🌑.",
+        "🌒.",
+        "🌓.",
+        "🌔.",
+        "🌕.",
+        "🌖.",
+        "🌗.",
+        "🌘.",
+        "🌑.",
+        "🌒.",
+        "🌓.",
+        "🌔.",
+        "🌕.",
+        "🌖.",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
