@@ -211,7 +211,7 @@ async def purgeme(event):
 
     smsg = await event.client.send_message(
         event.chat_id,
-        f"**❈╎تـم حـذف** " + str(count) + " **رسـالـة . . بنجـاح ☑️**",
+        f"**❖╎تـم حـذف** " + str(count) + " **رسـالـة . . بنجـاح ☑️**",
     )
     if BOTLOG:
         await event.client.send_message(
@@ -295,7 +295,7 @@ async def fastpurger(event):  # sourcery no-metrics
                         if msgs:
                             await event.client.delete_messages(chat, msgs)
                     elif ty == "كلمه":
-                        error += "\n✾╎الكلمـه المضـافه خـطأ"
+                        error += "\n❖╎الكلمـه المضـافه خـطأ"
                     else:
                         error += f"\n\n✾╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة "
             else:
@@ -352,7 +352,7 @@ async def fastpurger(event):  # sourcery no-metrics
             else:
                 error += f"\n✾╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة "
         elif input_str:
-            error += f"\n✾╎`.تنظيف {input_str}` الامـر خـطأ يـرجى الكتابة بـشكل صحيح"
+            error += f"\n❖╎`.تنظيف {input_str}` الامـر خـطأ يـرجى الكتابة بـشكل صحيح"
         elif p_type is not None:
             for ty in p_type:
                 if ty in purgetype:
@@ -369,7 +369,7 @@ async def fastpurger(event):  # sourcery no-metrics
                     if msgs:
                         await event.client.delete_messages(chat, msgs)
                 else:
-                    error += f"\n✾╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة"
+                    error += f"\n❖╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة"
         else:
             async for msg in event.client.iter_messages(
                 chat, min_id=event.reply_to_msg_id - 1
@@ -396,10 +396,10 @@ async def fastpurger(event):  # sourcery no-metrics
                     if msgs:
                         await event.client.delete_messages(chat, msgs)
                 elif ty == "الكتابه":
-                    error += "\n✾╎لا تستطـيع استـخدام امر التنظيف عبر البحث مع الكلمـه المضـافه"
+                    error += "\n❖╎لا تستطـيع استـخدام امر التنظيف عبر البحث مع الكلمـه المضـافه"
 
                 else:
-                    error += f"\n✾╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة "
+                    error += f"\n❖╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة "
         elif p_type == "كلمه":
             try:
                 cont, inputstr = input_str.split(" ")
@@ -444,10 +444,10 @@ async def fastpurger(event):  # sourcery no-metrics
                 if msgs:
                     await event.client.delete_messages(chat, msgs)
             elif ty == "كلمه":
-                error += "\n✾╎لا تستطـيع استـخدام امر التنظيف عبر البحث مع الكلمـه المضـاف"
+                error += "\n❖╎لا تستطـيع استـخدام امر التنظيف عبر البحث مع الكلمـه المضـاف"
 
             else:
-                error += f"\n✾╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة "
+                error += f"\n❖╎`{ty}`  : هـذه الكلمـه المضـافه خاطئـة "
     elif input_str.isnumeric():
         async for msg in event.client.iter_messages(chat, limit=int(input_str) + 1):
             count += 1
@@ -458,15 +458,15 @@ async def fastpurger(event):  # sourcery no-metrics
         if msgs:
             await event.client.delete_messages(chat, msgs)
     else:
-        error += "\n✾╎لم يتـم تحـديد كلمـه مضـافه ارسـل  (`.اوامر التنظيف`) لـ رؤيـة اوامـر التنظـيف"
+        error += "\n❖╎لم يتـم تحـديد كلمـه مضـافه ارسـل  (`.اوامر التنظيف`) لـ رؤيـة اوامـر التنظـيف"
     if msgs:
         await event.client.delete_messages(chat, msgs)
     if count > 0:
-        result += "✾╎اكـتمل الـتنظيف السـريع\n✾╎تـم حـذف  " + str(count) + "من الـرسائل "
+        result += "❖╎اكـتمل الـتنظيف السـريع\n❖╎تـم حـذف  " + str(count) + "من الـرسائل "
     if error != "":
         result += f"\n\n**خـطأ:**{error}"
     if result == "":
-        result += "✾╎لا تـوجد رسـائل لـتنظيفها"
+        result += "❖╎لا تـوجد رسـائل لـتنظيفها"
     hi = await event.client.send_message(event.chat_id, result)
     if BOTLOG:
         await event.client.send_message(
