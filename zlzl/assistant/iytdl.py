@@ -84,7 +84,7 @@ async def iytdl_inline(event):
         await zedevent.delete()
         await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     else:
-        await zedevent.edit("**⌔╎عـذراً .. لم اجد اي نتائـج**")
+        await zedevent.edit("**❖╎عـذراً .. لم اجد اي نتائـج**")
 
 
 @zedub.tgbot.on(
@@ -122,11 +122,11 @@ async def ytdl_download_callback(c_q: CallbackQuery):  # sourcery no-metrics
     callback_continue += f"\n\nصيغـة الملـف : {disp_str}"
     await c_q.answer(callback_continue, alert=True)
     upload_msg = await c_q.client.send_message(
-        BOTLOG_CHATID, "**⌔╎جـارِ الـرفـع ...**"
+        BOTLOG_CHATID, "**❖╎جـارِ الـرفـع ...**"
     )
     yt_url = BASE_YT_URL + yt_code
     await c_q.edit(
-        f"<b>⌔╎جـارِ تحميـل 🎧 {media_type} ...</b>\n\n  <a href={yt_url}>  <b>⌔╎الـرابـط 📎</b></a>\n🎚 <b>⌔╎الصيغـه </b> : {disp_str}",
+        f"<b>❖╎جـارِ تحميـل 🎧 {media_type} ...</b>\n\n  <a href={yt_url}>  <b>⌔╎الـرابـط 📎</b></a>\n🎚 <b>⌔╎الصيغـه </b> : {disp_str}",
         parse_mode="html",
     )
     if downtype == "v":
@@ -143,7 +143,7 @@ async def ytdl_download_callback(c_q: CallbackQuery):  # sourcery no-metrics
         else:
             _fpath = _path
     if not _fpath:
-        await edit_delete(upload_msg, "**⌔╎اووبـس .. لم يتـم إيجـاد المطلـوب ؟!**")
+        await edit_delete(upload_msg, "**⌔╎ اعذرني صار خلل؟!**")
         return
     if not thumb_pic:
         thumb_pic = str(await pool.run_in_thread(download)(await get_ytthumb(yt_code)))
@@ -173,12 +173,12 @@ async def ytdl_download_callback(c_q: CallbackQuery):  # sourcery no-metrics
     uploaded_media = await c_q.client.send_file(
         BOTLOG_CHATID,
         file=media,
-        caption=f"<b>⌔╎الاسـم : </b><code>{os.path.basename(Path(_fpath))}</code>",
+        caption=f"<b>❖╎الاسـم : </b><code>{os.path.basename(Path(_fpath))}</code>",
         parse_mode="html",
     )
     await upload_msg.delete()
     await c_q.edit(
-        text=f"<b>⌔╎الـرابـط 📎: </b> <a href={yt_url}><b>{os.path.basename(Path(_fpath))}</b></a>",
+        text=f"<b>❖╎الـرابـط 📎 : </b> <a href={yt_url}><b>{os.path.basename(Path(_fpath))}</b></a>",
         file=uploaded_media.media,
         parse_mode="html",
     )
