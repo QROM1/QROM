@@ -32,7 +32,7 @@ async def zed_alive(event):
     boot_time_timestamp = psutil.boot_time()
     bt = datetime.fromtimestamp(boot_time_timestamp)
     start = datetime.now()
-    zedevent = await edit_or_reply(event, "**⎆┊جـاري .. فحـص البـوت الخـاص بك**")
+    zedevent = await edit_or_reply(event, "**❖┊جـاري .. فحـص البـوت الخـاص بك**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
@@ -43,7 +43,7 @@ async def zed_alive(event):
     else:
         zedda = f"{bt.year}/{bt.month}/{bt.day}"
     Z_EMOJI = gvarstatus("ALIVE_EMOJI") or "✥┊"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت  زدثــون 𝗭𝗧𝗵𝗼𝗻  يعمـل .. بنجـاح ☑️ 𓆩 **"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت  الانينمـَوس 𝐀𝐍𝐘𝐍𝐌𝐔𝐒  يعمـل .. بنجـاح ☑️ ❖ **"
     ZED_IMG = gvarstatus("ALIVE_PIC")
     USERID = zedub.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
     ALIVE_NAME = gvarstatus("ALIVE_NAME") if gvarstatus("ALIVE_NAME") else Config.ALIVE_NAME
@@ -74,7 +74,7 @@ async def zed_alive(event):
         except (WebpageMediaEmptyError, MediaEmptyError, WebpageCurlFailedError):
             return await edit_or_reply(
                 zedevent,
-                f"**⌔∮ عـذراً عليـك الـرد ع صـوره او ميـديـا  ⪼  `.اضف صورة الفحص` <بالرد ع الصـوره او الميـديـا> ",
+                f"**❖ عـذراً عليـك الـرد ع صـوره او ميـديـا  ❖  `.اضف صورة الفحص` <بالرد ع الصـوره او الميـديـا> ",
             )
     else:
         await edit_or_reply(
@@ -85,14 +85,14 @@ async def zed_alive(event):
 
 zed_temp = """
 ┏───────────────┓
-│ ◉ sᴏʀᴄᴇ 😄 ɪs ʀᴜɴɴɪɴɢ ɴᴏᴡ
+│ ❖ 𝑺𝑶𝑼𝑹𝑪𝑬 𝑨𝑵𝒀𝑵𝑴𝑼𝑺 𝑰𝑺 𝑹𝑼𝑵𝑵𝑰𝑵𝑮 𝑵𝑶𝑾 
 ┣───────────────┫
-│ ● ɴᴀᴍᴇ ➪  {mention}
-│ ● ᴢᴛʜᴏɴ ➪ {telever}
-│ ● ᴘʏᴛʜᴏɴ ➪ {pyver}
-│ ● ᴘʟᴀᴛғᴏʀᴍ ➪ 𐋏ᥱr᧐κᥙ
-│ ● ᴘɪɴɢ ➪ {ping}
-│ ● ᴜᴘ ᴛɪᴍᴇ ➪ {uptime}
-│ ● ᴀʟɪᴠᴇ sɪɴᴇᴄ ➪ {zedda}
-│ ● ᴍʏ ᴄʜᴀɴɴᴇʟ ➪ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/ZThon)
+│ ❖ 𝐍𝐀𝐌𝐄 ➪  {mention}
+│ ❖ 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 ➪ {telever}
+│ ❖ 𝐏𝐘𝐓𝐇𝐎𝐍 ➪ {pyver}
+│ ❖ 𝐏𝐋𝐀𝐓𝐅𝐎𝐑𝐌 ➪ 𝐀𝐍𝐘𝐍𝐌𝐔𝐒
+│ ❖ 𝐏𝐈𝐍𝐆 ➪ {ping}
+│ ❖ 𝐔𝐏 𝐓𝐈𝐌𝐄 ➪ {uptime}
+│ ❖ 𝐀𝐋𝐈𝐕𝐄 𝐒𝐈𝐍𝐄𝐂 ➪ {zedda}
+│ ❖ 𝐌𝐘 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ➪ [𝐀𝐍𝐘𝐍𝐌𝐔𝐒](https://t.me/ANENMOS)
 ┗───────────────┛"""
