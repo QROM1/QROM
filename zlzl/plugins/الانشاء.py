@@ -9,28 +9,28 @@ plugin_category = "الادوات"
 
 
 @zedub.zed_cmd(
-    pattern="انشاء (كروب|خارق|قناه) ([\s\S]*)",
+    pattern="انشاء (قروب|خارق|قناه) ([\s\S]*)",
     command=("انشاء", plugin_category),
     info={
-        "header": "لـ إنشـاء (كروب خارق/كروب/قناه) باستخـدام البـوت",
+        "header": "لـ إنشـاء (قروب خارق/قروب/قناه) باستخـدام البـوت",
         "امر اضافي": {
             "خارق": "لـ إنشـاء مجمـوعـة خـارقـه",
-            "كروب": "لـ إنشـاء مجمـوعـة",
+            "قروب": "لـ إنشـاء مجمـوعـة",
             "قناه": "لـ إنشـاء قنـاة",
         },
-        "الاستخـدام": "{tr}انشاء (خارق/كروب/قناه) + اسـم (القنـاة/الكـروب)",
-        "مثــال": "{tr}انشاء قناه زدثون",
+        "الاستخـدام": "{tr}انشاء (خارق/قروب/قناه) + اسـم (القنـاة/القروب)",
+        "مثــال": "{tr}انشاء قناه انينموس",
     },
 )
 async def _(event):
-    "لـ إنشـاء (كروب خارق/كروب/قناه) باستخـدام البـوت"
+    "لـ إنشـاء (قروب خارق/قروب/قناه) باستخـدام البـوت"
     type_of_group = event.pattern_match.group(1)
     group_name = event.pattern_match.group(2)
     if type_of_group == "قناه":
-        descript = "**⎉╎هـذه القنـاة تم إنشائهـا بواسطـة .. زدثــون™**"
+        descript = "**❖╎هـذه القنـاة تم إنشائهـا بواسطـة .. انينمـَوس™**"
     else:
-        descript = "**⎉╎هـذا المجمـوعـه تم إنشائهـا بواسطـة .. زدثــون™**"
-    if type_of_group == "كروب":
+        descript = "**❖╎هـذا المجمـوعـه تم إنشائهـا بواسطـة .. انينمـَوس™**"
+    if type_of_group == "قروب":
         try:
             result = await event.client(
                 functions.messages.CreateChatRequest(
@@ -47,7 +47,7 @@ async def _(event):
                 )
             )
             await edit_or_reply(
-                event, f"**⎉╎الكـروب `{group_name}` تم إنشـائه.. بنجـاح✓** \n**⎉╎الرابـط** {result.link}"
+                event, f"**❖╎القروب `{group_name}` تم إنشـائه.. بنجـاح✓** \n**❖╎الرابـط** {result.link}"
             )
         except Exception as e:
             await edit_delete(event, f"**- خطـأ :**\n{str(e)}")
@@ -68,7 +68,7 @@ async def _(event):
             )
             await edit_or_reply(
                 event,
-                f"**⎉╎القنـاة `{group_name}` تم انشائهـا .. بنجـاح✓** \n**⎉╎الرابـط** {result.link}",
+                f"**❖╎القنـاة `{group_name}` تم انشائهـا .. بنجـاح✓** \n**❖╎الرابـط** {result.link}",
             )
         except Exception as e:
             await edit_delete(event, f"**- خطـأ :**\n{e}")
@@ -79,7 +79,7 @@ async def _(event):
         if answer[0] != "error":
             await edit_or_reply(
                 event,
-                f"**⎉╎الكـروب الخـارق `{group_name}` تم إنشـائه.. بنجـاح✓** \n**⎉╎الرابـط** {answer[0].link}",
+                f"**❖╎القروب الخـارق `{group_name}` تم إنشـائه.. بنجـاح✓** \n**❖╎الرابـط** {answer[0].link}",
             )
         else:
             await edit_delete(event, f"**- خطـأ :**\n{answer[1]}")
