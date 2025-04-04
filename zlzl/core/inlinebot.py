@@ -196,9 +196,9 @@ async def inline_handler(event):  # sourcery no-metrics
             controlpmch = gvarstatus("pmchannel") or None
             if controlpmch is not None:
                 zchannel = controlpmch.replace("@", "")
-                buttons = [[Button.url("⌔ قنـاتـي ⌔", f"https://t.me/{zchannel}")]]
+                buttons = [[Button.url(" قنـاتـي ❖", f"https://t.me/{ANENMUS}")]]
             else:
-                buttons = [[Button.url("𝗭𝗧𝗵𝗼𝗻", "https://t.me/ZThon")]]
+                buttons = [[Button.url("𝐀𝐍𝐘𝐍𝐌𝐔𝐒", "https://t.me/ANENMUS")]]
             PM_PIC = gvarstatus("pmpermit_pic")
             if PM_PIC:
                 CAT = [x for x in PM_PIC.split()]
