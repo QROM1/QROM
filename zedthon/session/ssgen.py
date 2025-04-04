@@ -62,11 +62,11 @@ def telethon_session():
     # logging in
     try:
         with TelegramClient(StringSession(), API_ID, API_HASH) as zthon:
-            print("Generating a string session for •ZThon•")
+            print("Generating a string session for •𝐀𝐍𝐘𝐍𝐌𝐔𝐒•")
             try:
                 zthon.send_message(
                     "me",
-                    f"**- هـذا هو كـود سيشـن تيليثـون الخـاص بـك ☑️**:\n\n`{zthon.session.save()}`\n\n**- لا تشـارك هـذا الكـود مع اي احـد ⚠️؟!**\n**- فقـط قم بنسخـه ولصقـه في مربعـات التنصيب 🛃**\n\n**- سـورس زدثــون : @ZThon**",
+                    f"**- هـذا هو كـود سيشـن تيليثـون الخـاص بـك ☑️**:\n\n`{zthon.session.save()}`\n\n**- لا تشـارك هـذا الكـود مع اي احـد ⚠️؟!**\n**- فقـط قم بنسخـه ولصقـه في مربعـات التنصيب 🛃**\n\n**- سـورس انينمـَوس : @ANENMUS**",
                 )
                 print(
                     "Your SESSION has been generated. Check your Telegram saved messages!"
@@ -128,7 +128,7 @@ def main():
     try:
         type_of_ss = int(
             input(
-                "\nZThon Userbot\n\nWhich session do you want to generate?\n1. Telethon Session.\n2. Pyrogram Session.\n\nEnter choice:  "
+                "\n𝐀𝐍𝐘𝐍𝐌𝐔𝐒 Mseegerorrbot\n\nWhich session do you want to generate?\n1. Telethon Session.\n2. Pyrogram Session.\n\nEnter choice:  "
             )
         )
     except Exception as e:
