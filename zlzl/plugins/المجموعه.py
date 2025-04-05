@@ -1007,7 +1007,6 @@ async def _(event):
     zedevent = await edit_or_reply(event, "**❖╎ إلغاء حظر جميع الحسابات المحظورة في هذه المجموعة ❖**")
     succ = 0
     total = 0
-    flag = False
     chat = await event.get_chat()
     async for i in event.client.iter_participants(event.chat_id, filter=ChannelParticipantsKicked, aggressive=True):
         total += 1
@@ -1017,15 +1016,11 @@ async def _(event):
         except FloodWaitError as e:
             LOGS.warn(f"**❖╎هناك ضغط كبير بالاستخدام يرجى الانتضار .. ‼️ بسبب  : {e.seconds} **")
             await zedevent.edit(f"**❖╎{readable_time(e.seconds)} مطلـوب المـعاودة مـرة اخـرى للـمسح 🔁 **")
-            await sleep(e.seconds + 5)
+            await sleep(e.seconds + 5)  # الاحتفاظ بهذا في حالة حدوث خطأ فقط
         except Exception as ex:
             await zedevent.edit(str(ex))
         else:
             succ += 1
-            if flag:
-                await sleep(2)
-            else:
-                await sleep(1)
             try:
                 if succ % 10 == 0:
                     await zedevent.edit(f"**❖╎جـارِ مسـح المحـظورين ❖  : \n {succ} الحسـابات الـتي غيـر محظـورة لحـد الان.**")
