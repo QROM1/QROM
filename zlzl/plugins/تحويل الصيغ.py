@@ -57,7 +57,7 @@ async def _(cat):
     reply_to_id = cat.message.id
     if cat.reply_to_msg_id:
         reply_to_id = cat.reply_to_msg_id
-    event = await edit_or_reply(cat, "**⌔∮ جاري التحويل**")
+    event = await edit_or_reply(cat, "**❖❖ جاري التحويل**")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -81,7 +81,7 @@ async def _(cat):
         else:
             await event.edit("Can't Convert")
     else:
-        await event.edit("**⌔∮ بالـرد ﮼؏ ملصـق . . .**")
+        await event.edit("**❖❖ بالـرد ﮼؏ ملصـق . . .**")
 
 
 @zedub.zed_cmd(pattern="لملصق$")
@@ -91,7 +91,7 @@ async def _(cat):
     reply_to_id = cat.message.id
     if cat.reply_to_msg_id:
         reply_to_id = cat.reply_to_msg_id
-    event = await edit_or_reply(cat, "**⌔∮ جاري التحويل**")
+    event = await edit_or_reply(cat, "**❖❖ جاري التحويل**")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -115,7 +115,7 @@ async def _(cat):
         else:
             await event.edit("Can't Convert")
     else:
-        await event.edit("**⌔∮ بالـرد ﮼؏ صـورة . . .**")
+        await event.edit("**❖❖ بالـرد ﮼؏ صـورة . . .**")
 
 
 async def silently_send_message(conv, text):
@@ -180,11 +180,11 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await edit_or_reply(event, "**⌔∮ بالـرد ﮼؏ فيـديـو او بصمـة او صـوت . . .**")
+        await edit_or_reply(event, "**❖❖ بالـرد ﮼؏ فيـديـو او بصمـة او صـوت . . .**")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await edit_or_reply(event, "**⌔∮ بالـرد ﮼؏ فيـديـو او بصمـة او صـوت . . .**")
+        await edit_or_reply(event, "**❖❖ بالـرد ﮼؏ فيـديـو او بصمـة او صـوت . . .**")
         return
     input_str = event.pattern_match.group(1)
     if input_str is None:
@@ -627,19 +627,19 @@ async def pic_gifcmd(event):
     reply = await event.get_reply_message()
     mediatype = media_type(reply)
     if not reply or not mediatype or mediatype not in ["Photo", "Sticker"]:
-        return await edit_delete(event, "**╮ بالـرد ﮼؏ صـورة او ملصـق للتحـويل لمتحركـه ...𓅫╰**")
+        return await edit_delete(event, "**╮ بالـرد ﮼؏ صـورة او ملصـق للتحـويل لمتحركـه ...❖╰**")
     if mediatype == "Sticker" and reply.document.mime_type == "application/i-tgsticker":
         return await edit_delete(
             event,
-            "**╮ بالـرد ﮼؏ صـورة او ملصـق للتحـويل لمتحركـه ...𓅫╰**",
+            "**╮ بالـرد ﮼؏ صـورة او ملصـق للتحـويل لمتحركـه ...❖╰**",
         )
     args = event.pattern_match.group(1)
     args = "i" if not args else args.replace("-", "")
-    catevent = await edit_or_reply(event, "**╮ جـاري ﮼التحويـل لـ متحركـة 🎞🎆...𓅫╰**")
+    catevent = await edit_or_reply(event, "**╮ جـاري ﮼التحويـل لـ متحركـة 🎞🎆...❖╰**")
     imag = await _zedtools.media_to_pic(event, reply)
     if imag[1] is None:
         return await edit_delete(
-            imag[0], "**- اووبـس .. تعذر استخراج الصورة من الرسالة التي تم الرد عليها..**"
+            imag[0], "**❖ اووبـس .. تعذر استخراج الصورة من الرسالة التي تم الرد عليها..**"
         )
     image = Image.open(imag[1])
     w, h = image.size
@@ -688,7 +688,7 @@ async def _(event):
     reply = await event.get_reply_message()
     mediatype = media_type(event)
     if mediatype and mediatype != "video":
-        return await edit_delete(event, "**╮ بالـرد ﮼؏ فيديـو للتحـويل لمتحركـه ...𓅫╰**")
+        return await edit_delete(event, "**╮ بالـرد ﮼؏ فيديـو للتحـويل لمتحركـه ...❖╰**")
     args = event.pattern_match.group(1)
     if not args:
         args = 2.0
@@ -697,7 +697,7 @@ async def _(event):
             args = float(args)
         except ValueError:
             args = 2.0
-    catevent = await edit_or_reply(event, "**╮ جـاري تحويل الفيديـو ✓ لمتحـركـه ﮼الـرجاء الانتظـار ...🎞🎆╰**")
+    catevent = await edit_or_reply(event, "**╮ جـاري تحويل الفيديـو ✓ لمتحـركـه ﮼الـرجاء الانتظـار ...❖❖╰**")
     inputfile = await reply.download_media()
     outputfile = os.path.join(Config.TEMP_DIR, "vidtogif.gif")
     result = await vid_to_gif(inputfile, outputfile, speed=args)
