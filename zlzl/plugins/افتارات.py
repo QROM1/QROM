@@ -44,25 +44,25 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="ستوري انمي$")
+@zedub.zed_cmd(pattern="الشعار$")
 async def _(event):
-    zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الستـوري ...**")
+    zzevent = await edit_or_reply(event, "**هذا هو شعار انينمـَوس  =    `❖` **")
     try:
         ZTHONR = [
             zlzzl
             async for zlzzl in event.client.iter_messages(
-                "@AA_Zll", filter=InputMessagesFilterVideo
+                "@55", filter=InputMessagesFilterVideo
             )
         ]
         aing = await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
             file=random.choice(ZTHONR),
-            caption=f"**🎆┊ستـوريات آنمـي قصيـرة 🖤🧧**",
+            caption=f"**هذا هو شعار انينمـَوس  =    `❖` **",
         )
         await zzevent.delete()
     except Exception:
-        await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
+        await zzevent.edit(""**هذا هو شعار انينمـَوس  =    `❖` **"))
 
 
 @zedub.zed_cmd(pattern="رقيه$")
