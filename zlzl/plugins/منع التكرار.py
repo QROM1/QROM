@@ -35,18 +35,18 @@ async def _(event):
     except Exception as e:
         no_admin_privilege_message = await event.client.send_message(
             entity=event.chat_id,
-            message=f"**⎉╎تنبيه التكرار للادمنية ⚠️**\n\n**⎉╎ الى** @admin **المجموعة!**\n**⎉╎ قام↫** [المستخدم](tg://user?id={event.message.sender_id})\n**⎉╎بتكرار رسائله في المجموعة**\x1f`{e}`",
+            message=f"**❖╎تنبيه التكرار للادمنية ⚠️**\n\n**❖╎ الى** @admin **المجموعة!**\n**❖╎ قام↫** [المستخدم](tg://user?id={event.message.sender_id})\n**❖╎بتكرار رسائله في المجموعة**\x1f`{e}`",
             reply_to=event.message.id,
         )
 
         await asyncio.sleep(4)
         await no_admin_privilege_message.edit(
-            "**⎉╎هذا هو الشخص الذي قام بالتكرار \n⎉╎توقف لكي لا تًطرد 📵**"
+            "**⎉╎هذا هو الشخص الذي قام بالتكرار \❖╎توقف لكي لا تًطرد 📵**"
         )
     else:
         await event.client.send_message(
             entity=event.chat_id,
-            message=f"**⎉╎عملية التقيد التلقائي للتكرار ⚠️**\n\n**⎉╎قام ↫**[المستخدم ](tg://user?id={event.message.sender_id})\n**⎉╎تم تقييده تلقائيًا بسبب عبوره حد السماح بالتكرار في هذه المجموعة**",
+            message=f"**❖╎عملية التقيد التلقائي للتكرار ⚠️**\n\n**❖╎قام ↫**[المستخدم ](tg://user?id={event.message.sender_id})\n**⎉╎تم تقييده تلقائيًا بسبب عبوره حد السماح بالتكرار في هذه المجموعة**",
             reply_to=event.message.id,
         )
 
@@ -58,11 +58,11 @@ async def _(event):
 )
 async def _(event):
     input_str = event.pattern_match.group(1)
-    event = await edit_or_reply(event, "**⎉╎تم تحديث عدد التكرار ..بنجـاح**")
+    event = await edit_or_reply(event, "**❖╎تم تحديث عدد التكرار ..بنجـاح**")
     await asyncio.sleep(2)
     try:
         sql.set_flood(event.chat_id, input_str)
         sql.__load_flood_settings()
-        await event.edit(f"**⎉╎تم تحديث التكرار الى {input_str} في الدردشة الحالية**")
+        await event.edit(f"**❖╎تم تحديث التكرار الى {input_str} في الدردشة الحالية**")
     except Exception as e:
         await event.edit(str(e))
