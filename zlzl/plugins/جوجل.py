@@ -80,7 +80,7 @@ async def scam(results, lim):
 )
 async def gsearch(q_event):
     "Google search command."
-    zedevent = await edit_or_reply(q_event, "**- جـارِ البحـث في جوجــل...**")
+    zedevent = await edit_or_reply(q_event, "**- جـارِ البحـث في قـوقـل...**")
     match = q_event.pattern_match.group(1)
     page = re.findall(r"صفحه\d+", match)
     lim = re.findall(r"عدد\d+", match)
