@@ -29,7 +29,7 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    await event.edit("**╮ ❐ جـاري البحث عن الصـور  ...𓅫╰**")
+    await event.edit("**❖ ❖ جـاري البحث عن الصـور  ...❖╰**")
     zedthon = event.pattern_match.group(1)
     wzed_dir = os.path.join(
         Config.TMP_DOWNLOAD_DIRECTORY,
@@ -69,7 +69,7 @@ async def _(event):
                 f_d.write(await image_req_set.read())
             url_lst.append(image_save_path)
     if not url_lst:
-        await event.edit(f"**- اووبـس .. لم استطـع ايجـاد صـور عـن {zedthon} ؟!**\n**- حـاول مجـدداً واكتـب الكلمـه بشكـل صحيح**")
+        await event.edit(f"**- خطأ .. لم استطـع ايجـاد صـور عـن {zedthon} ؟!**\n**- حـاول مجـدداً واكتـب الكلمـه بشكـل صحيح**")
         return
     await event.reply(
         file=url_lst,
@@ -95,7 +95,7 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    await event.edit("**╮ ❐ جـاري البحث عن خلفيـات  ...𓅫╰**")
+    await event.edit("**╮ ❖ جـاري البحث عن خلفيـات  ...❖╰**")
     zedthon = event.pattern_match.group(1)
     wzed_dir = os.path.join(
         Config.TMP_DOWNLOAD_DIRECTORY,
@@ -135,7 +135,7 @@ async def _(event):
                 f_d.write(await image_req_set.read())
             url_lst.append(image_save_path)
     if not url_lst:
-        await event.edit(f"**- اووبـس .. لم استطـع ايجـاد خلفيـات عـن {zedthon} ؟!**\n**- حـاول مجـدداً واكتـب الكلمـه بشكـل صحيح**")
+        await event.edit(f"**- خطأ .. لم استطـع ايجـاد خلفيـات عـن {zedthon} ؟!**\n**- حـاول مجـدداً واكتـب الكلمـه بشكـل صحيح**")
         return
     await event.reply(
         file=url_lst,
@@ -148,7 +148,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).seconds
     await event.edit(
-        f"**- اكتمـل البحث عـن {zedthon} في {ms} ثانيـه ✓**",
+        f"**❖ اكتمـل البحث عـن {zedthon} في {ms} ثانيـه ✓**",
         link_preview=False
     )
     await asyncio.sleep(5)
