@@ -80,7 +80,7 @@ async def spam_abusezed(event, sandy, zed, sleeptimem, sleeptimet, DelaySpam=Fal
 
 # code by t.me/zzzzl1l
 @zedub.zed_cmd(pattern=r"بلاغ (.+)")
-async def spammer(event):
+async def start_spammer(event):  # <-- اسم جديد
     sandy = await event.get_reply_message()
     zed = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
     try:
@@ -100,13 +100,9 @@ async def spammer(event):
     await spam_abusezed(event, sandy, zed, sleeptimem, sleeptimet)
 
 
-# code by t.me/zzzzl1l
 @zedub.zed_cmd(pattern=f"{UNSPAM} ?(.*)",)
-async def spammer(event):
+async def stop_spammer(event):  # <-- اسم مختلف
     if gvarstatus("spamwork") is not None and gvarstatus("spamwork") == "true":
         delgvar("spamwork")
         return await edit_delete(event, "**- تم ايقـاف البلاغـات .. بنجـاح ✅**")
     return await edit_delete(event, "**- لايوجـد هنـاك بلاغـات لـ إيقافهـا ؟!**")
-
-
-
