@@ -34,10 +34,10 @@ async def _(event):
         return
     d_link = event.pattern_match.group(1)
     if ".com" not in d_link:
-        await event.edit("**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
+        await event.edit("**❖ جـارِ البحث عن الاغنيـٓه... 💈╰**")
     else:
-        await event.edit("**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
-    chat = "@Abm_MusicDownloader_Bot"
+        await event.edit("**❖ جـارِ البحث عن الاغنيـٓه... 💈╰**")
+    chat = "@BOTSMJDBOT"
     async with borg.conversation(chat) as conv: # code by t.me/zzzzl1l
         try:
             await conv.send_message("/start")
@@ -54,7 +54,7 @@ async def _(event):
                 await borg.send_file(
                     event.chat_id,
                     zelzal,
-                    caption=f"**❈╎البحـث :** `{d_link}`",
+                    caption=f"**❖╎البحـث :** `{d_link}`",
                 )
 
             else:
@@ -75,7 +75,7 @@ async def _(event):
                 await borg.send_file(
                     event.chat_id,
                     zelzal,
-                    caption=f"**❈╎البحـث :** `{d_link}`",
+                    caption=f"**❖╎البحـث :** `{d_link}`",
                 )
 
             else:
