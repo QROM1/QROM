@@ -79,7 +79,7 @@ async def spam_abusezed(event, sandy, zed, sleeptimem, sleeptimet, DelaySpam=Fal
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="بلاغ ([\s\S]*)")
+@zedub.zed_cmd(pattern=r"بلاغ (.+)")
 async def spammer(event):
     sandy = await event.get_reply_message()
     zed = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
