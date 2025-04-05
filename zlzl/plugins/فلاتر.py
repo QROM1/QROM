@@ -75,13 +75,13 @@ async def maccmd(event):  # sourcery no-metrics
     reply = await event.get_reply_message()
     mediatype = await media_type(reply)
     if not reply or not mediatype or mediatype not in ["Photo", "Sticker"]:
-        return await edit_delete(event, "**⎉╎بالـرد ع صورة او ملصق لعمل فرام ..**")
+        return await edit_delete(event, "**❖╎بالـرد ع صورة او ملصق لعمل فرام ..**")
     if mediatype == "Sticker" and reply.document.mime_type == "application/i-tgsticker":
         return await edit_delete(
             event,
-            "**⎉╎بالـرد ع صورة او ملصق لعمل فرام**\n**⎉╎الملصقات المتحركه غير مدعومه ...!!**",
+            "**⎉╎بالـرد ع صورة او ملصق لعمل فرام**\n**❖╎الملصقات المتحركه غير مدعومه ...!!**",
         )
-    catevent = await event.edit("**⎉╎جـارِ عمل فرام لملف الميديا ...**")
+    catevent = await event.edit("**❖╎جـارِ عمل فرام لملف الميديا ...**")
     args = event.pattern_match.group(1)
     force = bool(args)
     try:
@@ -90,11 +90,11 @@ async def maccmd(event):  # sourcery no-metrics
         )
         if imag[1] is None:
             return await edit_delete(
-                imag[0], "**⎉╎عـذراً .. لم استطـع استخـراج صـوره من ملـف الميـديا هـذا ؟!**"
+                imag[0], "**❖╎عـذراً .. لم استطـع استخـراج صـوره من ملـف الميـديا هـذا ؟!**"
             )
         image = Image.open(imag[1])
     except Exception as e:
-        return await edit_delete(catevent, f"**⎉╎خطـأ في الصـورة :**\n__{e}__")
+        return await edit_delete(catevent, f"**❖╎خطـأ في الصـورة :**\n__{e}__")
     wid, hgt = image.size
     img = Image.new("RGBA", (wid, hgt))
     scale = min(wid // 100, hgt // 100)
@@ -163,11 +163,11 @@ async def memes(event):
     reply = await event.get_reply_message()
     mediatype = meme_type(reply)
     if not reply:
-        return await edit_delete(event, "**⎉╎قم بالـرد ع وسـائط مدعومـه ...**")
+        return await edit_delete(event, "**❖╎قم بالـرد ع وسـائط مدعومـه ...**")
     catid = await reply_id(event)
     if not zedinput:
         return await edit_delete(
-            event, "**⎉╎حقوق + نص بالـرد ع ملف ميديا مدعوم ...**"
+            event, "**❖╎حقوق + نص بالـرد ع ملف ميديا مدعوم ...**"
         )
     if ";" in zedinput:
         top, bottom = zedinput.split(";", 1)
@@ -181,7 +181,7 @@ async def memes(event):
     )
     if output[1] is None:
         return await edit_delete(
-            output[0], "**⎉╎عـذراً .. لم استطـع استخـراج صـوره من ملـف الميـديا هـذا ؟!**"
+            output[0], "**❖╎عـذراً .. لم استطـع استخـراج صـوره من ملـف الميـديا هـذا ؟!**"
         )
     meme_file = output[1]
     meme = os.path.join("./temp", "catmeme.jpg")
@@ -226,15 +226,15 @@ async def memes(event):
     pattern="الخطوط(?:\s|$)([\s\S]*)",
     command=("الخطوط", plugin_category),
     info={
-        "header": "لعـرض قائمـة خطـوط زدثــون",
+        "header": "لعـرض قائمـة خطـوط انينمـَوس ",
         "الاستخـدام": "{tr}.الخطوط",
     },
 )
 async def lang(event):
-    "لعـرض قائمـة خطـوط زدثــون"
+    "لعـرض قائمـة خطـوط انينمـَوس "
     input_str = event.pattern_match.group(1)
     if not input_str:
-        await event.edit(f"**⎉╎قائمـة خطـوط زدثــون هـي :-**\n**قم بنسخ اسم الخط ثم ارسل (.خط + اسم الخط)**\n\n{FONTS}")
+        await event.edit(f"**❖╎قائمـة خطـوط انينمـَوس هـي :-**\n**قم بنسخ اسم الخط ثم ارسل (.خط + اسم الخط)**\n\n{FONTS}")
         return
     else:
         return
@@ -253,20 +253,20 @@ async def lang(event):
     "لـ تغييـر خط كتابـة الحقـوق"
     input_str = event.pattern_match.group(1)
     if not input_str:
-        await event.edit(f"**⎉╎قم بكتابة الامـر كالتالـي :**\n`.خطوط` **+ رقـم الخـط**\n**⎉╎لعـرض قائمـة الخطـوط ارسـل** `.الخطوط`")
+        await event.edit(f"**❖╎قم بكتابة الامـر كالتالـي :**\n`.خطوط` **+ رقـم الخـط**\n**⎉╎لعـرض قائمـة الخطـوط ارسـل** `.الخطوط`")
         return
     if input_str == "عربي":
         arr = f"zlzl/helpers/styles/zarz.ttf"
         addgvar("ZED_FONTS", arr)
-        await edit_or_reply(event, "**⎉╎تم تغييـر خـط كتابـة الحقـوق الـى العربيـة**")
+        await edit_or_reply(event, "**❖╎تم تغييـر خـط كتابـة الحقـوق الـى العربيـة**")
     if input_str not in font_list:
-        catevent = await edit_or_reply(event, "**⎉╎قم بكتابه اسم الخط بشكل صحيح ...؟!**")
+        catevent = await edit_or_reply(event, "**❖╎قم بكتابه اسم الخط بشكل صحيح ...؟!**")
         await asyncio.sleep(1)
-        await catevent.edit(f"**⎉╎قائمـة خطـوط زدثــون هـي :-**\n\n{FONTS}")
+        await catevent.edit(f"**❖╎قائمـة خطـوط زدثــون هـي :-**\n\n{FONTS}")
     else:
         arg = f"zlzl/helpers/styles/{input_str}"
         addgvar("ZED_FONTS", arg)
-        await edit_or_reply(event, f"**⎉╎تم تغييـر خـط كتابـة الحقـوق الـى :-** `{input_str}`")
+        await edit_or_reply(event, f"**❖╎تم تغييـر خـط كتابـة الحقـوق الـى :-** `{input_str}`")
 
 
 @zedub.zed_cmd(
