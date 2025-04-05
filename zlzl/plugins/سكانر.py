@@ -151,7 +151,7 @@ async def get_ocr_languages(event):
 async def parse_ocr_space_api(event):
     if event.fwd_from:
         return
-    await event.edit("**⎉╎جـارِ جلب النص من الميديـا ▬▭ ...**")
+    await event.edit("**❖╎جـارِ جلب النص من الميديـا ▬▭ ...**")
     if not os.path.isdir(Config.TEMP_DIR):
         os.makedirs(Config.TEMP_DIR)
     lang_code = event.pattern_match.group(1)
@@ -172,7 +172,7 @@ async def parse_ocr_space_api(event):
     except Exception as e:
         await event.edit("**- اووبـس حدث خطـأ :**\n**-الخطأ :** `{}`\n`{}`".format(str(e), json.dumps(test_file, sort_keys=True, indent=4)))
     else:
-        await event.edit("**⎉╎تم جلب النص من الميديـا\n**⎉╎خـلال {} ثـانيـه...**\n\n`{}`".format(ProcessingTimeInMilliseconds, ParsedText))
+        await event.edit("**❖╎تم جلب النص من الميديـا\n**❖╎خـلال {} ثـانيـه...**\n\n`{}`".format(ProcessingTimeInMilliseconds, ParsedText))
     os.remove(downloaded_file_name)
     await event.edit(ParsedText)
 
@@ -233,7 +233,7 @@ async def ocr(event):
             tran_text = f"📜**الترجمـة :-\n- مـن {source_lan.title()}({reply_text.src.lower()}) الـى {transl_lan.title()}({reply_text.dest.lower()}) :**\n\n`{reply_text.text}`"
             await edit_or_reply(
                 zevent,
-                f"🧧**- تم نسـخ النص من ملف الميديـا :**\n\n`{ParsedText}`\n\n{tran_text}",
+                f"❖**- تم نسـخ النص من ملف الميديـا :**\n\n`{ParsedText}`\n\n{tran_text}",
             )
     if os.path.exists(output_file[1]):
         os.remove(output_file[1])
