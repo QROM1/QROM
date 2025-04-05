@@ -15,7 +15,7 @@ from ..helpers.utils import _zedtools, _zedutils, _format, install_pip, reply_id
 from .decorators import admin_cmd, sudo_cmd
 
 LOGS = logging.getLogger("ZThon")
-inst_done = "✅ تـم تنصيب سـورس زدثــون .. بنجـاح ⌔\n♥️ قم بالذهاب الى تيليجـرام الان ⌔\n💡 ثم ارسـل الامـر ( .مساعده ) ⌔" 
+inst_done = "✅ تـم تنصيب سـورس انينمـَوس  .. بنجـاح ❖\n💈 قم بالذهاب الى تيليجـرام الان ❖\n💡 ثم ارسـل الامـر ( .مساعده ) ❖" 
 
 def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
