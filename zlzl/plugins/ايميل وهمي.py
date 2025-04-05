@@ -32,7 +32,7 @@ plugin_category = "البوت"
 @zedub.zed_cmd(pattern="بريد$")
 async def zelzal_gpt(event):
     chat = "@TeMail_Robot" # code by t.me/zzzzl1l
-    zed = await edit_or_reply(event, "**⎉╎جـار إنشـاء ايميـل وهمـي 📧...**")
+    zed = await edit_or_reply(event, "**❖╎جـار إنشـاء ايميـل وهمـي 📧...**")
     async with borg.conversation(chat) as conv: # code by t.me/zzzzl1l
         try:
             await conv.send_message("/start")
@@ -42,7 +42,7 @@ async def zelzal_gpt(event):
             zedthon = await conv.get_response()
             malath = zedthon.text
             if "📧 Your temporary email" in zedthon.text:
-                aa = malath.replace("📧 Your temporary email address:", "**⎉╎تم انشـاء Email وهمـي .. بنجـاح ☑️\n⎉╎لجلب رسائـل الوارد ارسـل (.الوارد)\n⎉╎الايميـل الوهمـي الخـاص بك هـو 📧 :**") 
+                aa = malath.replace("📧 Your temporary email address:", "**❖╎تم انشـاء Email وهمـي .. بنجـاح ☑️\n❖╎لجلب رسائـل الوارد ارسـل (.الوارد)\n❖╎الايميـل الوهمـي الخـاص بك هـو 📧 :**") 
                 await zed.delete()
                 await borg.send_message(event.chat_id, aa)
         except YouBlockedUserError:
@@ -54,7 +54,7 @@ async def zelzal_gpt(event):
             zedthon = await conv.get_response()
             malath = zedthon.text
             if "📧 Your temporary email" in zedthon.text:
-                aa = malath.replace("📧 Your temporary email address:", "**⎉╎تم انشـاء Email وهمـي .. بنجـاح ☑️\n⎉╎لجلب رسائـل الوارد ارسـل (.الوارد)\n⎉╎الايميـل الوهمـي الخـاص بك هـو 📧 :**") 
+                aa = malath.replace("📧 Your temporary email address:", "**❖╎تم انشـاء Email وهمـي .. بنجـاح ☑️\n❖╎لجلب رسائـل الوارد ارسـل (.الوارد)\n❖╎الايميـل الوهمـي الخـاص بك هـو 📧 :**") 
                 await zed.delete()
                 await borg.send_message(event.chat_id, aa)
 
