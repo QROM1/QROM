@@ -151,7 +151,7 @@ async def setup_bot():
 
 async def mybot(): #Code by T.me/zzzzl1l
     if gvarstatus("z_assistant"):
-        print("تم تشغيل البوت المسـاعـد .. بنجــاح ✅")
+        print("تم تشغيل البوت المسـاعـد .. بنجــاح 💈")
     else:
         zzz = bot.me
         Zname = f"{zzz.first_name} {zzz.last_name}" if zzz.last_name else zzz.first_name
@@ -165,13 +165,13 @@ async def mybot(): #Code by T.me/zzzzl1l
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", "ZThon")
+            await bot.send_message("@BotFather", "𝐀𝐍𝐘𝐍𝐌𝐔𝐒")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setname")
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", f"مسـاعـد - {bot.me.first_name} ")
+            await bot.send_message("@BotFather", f"بوت ❖ {bot.me.first_name} ")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setuserpic")
             await asyncio.sleep(1)
@@ -189,15 +189,15 @@ async def mybot(): #Code by T.me/zzzzl1l
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", f"• بوت زدثـون المساعد ♥️🦾 الخاص بـ  {Zname} .\n• أحتوي على عدة أقسام خدمية 🎁\n• زخرفة - تواصل - حذف حسابات\n• تحكم حسابات ... وغيرها")
+            await bot.send_message("@BotFather", f"•  بـوت انينمـَوس الخاص بـ  {Zname} .\n• أحتوي على عدة أقسام خدمية 🎁\n• زخرفة - تواصل - حذف حسابات\n• تحكم حسابات ... وغيرها")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setdescription")
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", f"✧ البــوت المسـاعـد الخـاص بـ {Zname} \n✧ يحتـوي على عـدة أقسـام خدميـه 🧸♥️\n✧ لـ تنصيب مماثـل 🌐 @ZedThon 🌐")
+            await bot.send_message("@BotFather", f"❖ البــوت المسـاعـد الخـاص بـ {Zname} \n✧ يحتـوي على عـدة أقسـام خدميـه 💈\n✧ لـ تنصيب مماثـل 🌐 @ANYNMUS 🌐")
             await asyncio.sleep(2)
-            await bot.send_message("@BotFather", f"**• إعـداد البـوت المسـاعـد .. تم بنجـاح ☑️**\n**• جـارِ الان بـدء تنصيب سـورس زدثـون  ✈️. . .**\n\n**• ملاحظـه هامـه 🔰**\n- هـذه العمليه تحدث تلقائياً .. عبر جلسة التنصيب\n- لـذلك لا داعـي للقلـق 😇")
+            await bot.send_message("@BotFather", f"**❖ إعـداد البـوت المسـاعـد .. تم بنجـاح ☑️**\n**❖ جـارِ الان بـدء تنصيب سـورس زدثـون  💈. . .**\n\n**❖ ملاحظـه هامـه 💈**\n- هـذه العمليه تحدث تلقائياً .. عبر جلسة التنصيب\n- لـذلك لا داعـي للقلـق 💈")
             addgvar("z_assistant", True)
         except Exception as e:
             print(e)
@@ -220,8 +220,8 @@ async def startupmessage():
             Config.ZEDUBLOGO = await zedub.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/f821d27af168206b472ad.mp4",
-                caption=f"**⌔ مرحبـاً عـزيـزي** {zel_zal} 🫂\n**⌔ تـم تشغـيل سـورس زدثــون 🧸♥️**\n**⌔ التنصيب الخاص بـك .. بنجـاح ✅**\n**⌔ لـ تصفح قائمـة الاوامـر 🕹**\n**⌔ ارسـل الامـر** `{cmdhr}مساعده`",
-                buttons=[[Button.url("𝗭𝗧𝗵𝗼𝗻 🎡 𝗨𝘀𝗲𝗿𝗯𝗼𝘁", "https://t.me/ZThon")],[Button.url("الشروحات ²", "https://t.me/MMM07"), Button.url("الشروحات ¹", "https://t.me/zzzlvv")],[Button.url("حلـول الأخطـاء", "https://t.me/heroku_error")],[Button.url("التحـديثـات", "https://t.me/Zed_Thon")],[Button.url("مطـور السـورس", "https://t.me/BBBlibot")]]
+                caption=f"**❖ مرحبـاً عـزيـزي** {zel_zal} 🫂\n**❖ تـم تشغـيل سـورس انينمـَوس  💈**\n**❖ التنصيب الخاص بـك .. بنجـاح ✅**\n**❖ لـ تصفح قائمـة الاوامـر 🕹**\n**❖ ارسـل الامـر** `{cmdhr}مساعده`",
+                buttons=[[Button.url("𝗭𝗧𝗵𝗼𝗻 🎡 𝗨𝘀𝗲𝗿𝗯𝗼𝘁", "https://t.me/ANENMOS")],[Button.url("الشروحات ²", "https://t.me/ANENMOS"), Button.url("الشروحات ¹", "https://t.me/ANENMOS")],[Button.url("حلـول الأخطـاء", "https://t.me/ANENMOS")],[Button.url("التحـديثـات", "https://t.me/ANENMOS")],[Button.url("مطـور السـورس", "https://t.me/ANYNMUS")]]
             )
     except Exception as e:
         LOGS.error(e)
@@ -237,7 +237,7 @@ async def startupmessage():
         if msg_details:
             await zedub.check_testcases()
             message = await zedub.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**•⎆┊تـم اعـادة تشغيـل السـورس بنجــاح 🧸♥️**"
+            text = message.text + "\n\n**❖❖┊تـم اعـادة تشغيـل السـورس بنجــاح 💈**"
             await zedub.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await zedub.send_message(
@@ -405,7 +405,7 @@ async def verifyLoggerGroup():
             descript = "لا تقم بحذف هذه المجموعة أو التغيير إلى مجموعة عامه (وظيفتهـا تخزيـن كـل سجـلات وعمليـات البـوت.)"
             photozed = await zedub.upload_file(file="zedthon/malath/Zpic.jpg")
             _, groupid = await create_supergroup(
-                "مجمـوعـة السجـل زدثـــون", zedub, Config.TG_BOT_USERNAME, descript, photozed
+                "مجمـوعـة سجل انينمـَوس", zedub, Config.TG_BOT_USERNAME, descript, photozed
             )
             addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
             print(
