@@ -95,7 +95,7 @@ async def spammer(event):
     else:
         sleeptimet = 4
         sleeptimem = 0.3
-    await edit_delete(event, f"**⎉╎جـارِ الابـلاغ الداخلـي . . . ⚠️ \n⎉╎لـ الدعم @AbuseNotifications\n⎉╎عـدد البلاغـات ** {zed}", 5)
+    await edit_delete(event, f"**❖╎جـارِ الابـلاغ الداخلـي . . . ⚠️ \n❖╎لـ الدعم @AbuseNotifications\n⎉╎عـدد البلاغـات ** {zed}", 5)
     addgvar("spamwork", True)
     await spam_abusezed(event, sandy, zed, sleeptimem, sleeptimet)
 
