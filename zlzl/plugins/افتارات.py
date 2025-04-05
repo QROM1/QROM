@@ -62,7 +62,7 @@ async def _(event):
         )
         await zzevent.delete()
     except Exception:
-        await zzevent.edit(""**هذا هو شعار انينمـَوس  =    `❖` **")
+        await zzevent.edit("**هذا هو شعار انينمـَوس  =    `❖` **")
 
 
 @zedub.zed_cmd(pattern="رقيه$")
