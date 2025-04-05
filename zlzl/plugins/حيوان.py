@@ -35,17 +35,17 @@ sts_animal8 = "https://telegra.ph/file/19b193f06d680e3ec79c0.mp4"#جريذي
 sts_animal9 = "https://telegra.ph/file/cd1fcb86af78d83ba9002.mp4"#هايشه
 
 jjj = [
-    "100% مو حيوان غنبله 😱😂.",
-    "90% مو حيوان ضيم 😱😂👆",
-    "80%  ٴ😱😂",
-    "70%  ٴ😱😂",
-    "60% براسه 60 حظ 👌😂",
-    "50% حيوان هجين👍😂",
-    "( 40% ) خوش حيوان 👌😂",
-    "30% ٴ😒😂",
-    "20% ٴ😒😂",
-    "10% ٴ😒😂",
-    "0% ٴ😢😂",
+    "100% فخم وكفو ما عليه كلام!",
+    "90% راعي طيب بس فيه حركات.",
+    "80% عقله معه بس أحيان يضيع.",
+    "70% يمون بس لا تغلط عليه.",
+    "60% نص فله نص مشاكل.",
+    "50% مزاجي ع الآخر.",
+    "40% يا زينك ويا كثرك.",
+    "30% لا هو هني ولا هناك.",
+    "20% كأنك تحاكي جدار.",
+    "10% الله يعين اللي حوله.",
+    "0% قسم بالله ما له حل!",
 ]
 
 
@@ -102,102 +102,102 @@ async def fetch_info(replied_user, event):
     x = random.randrange(1, 9)
     if x == 1:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  مطي زربه 🦓 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖ | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖ | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖ | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖ | نــوعه   ⇦  طفران  </b>\n"
+       caption += f"<b> ❖ | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal, caption
     if x == 2:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  جلب شوارع 🐕‍🦺 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦  جلب شوارع 🐕‍🦺 </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal2, caption
     if x == 3:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  قرد لزكـه 🐒 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦  قرود الطائف 🐒 </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal3, caption
     if x == 4:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  صخل محترم 🐐 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦   خروف محترم 🐐 </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal4, caption
     if x == 5:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  طلي ابو البعرور الوصخ 🐑 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦  قواد السياره  </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal5, caption
     if x == 6:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  بزون ابوخالد 🐈 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦  محترم   </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal6, caption
     if x == 7:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  الزاحف ابو بريص 🦎 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦   البريعصي  🦎 </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal7, caption
     if x == 8:
        username = "@{}".format(username) if username else ("لايوجد معرف")
-       caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
+       caption = f"<b>  ❖  ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  جريذي ابو المجاري 🐀 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦  جرذي   🐀 </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS "
        return sts_animal8, caption
     if x == 9:
        username = "@{}".format(username) if username else ("لايوجد معرف")
        caption = f"<b>  ╮•🦦 الحيوان ⇦ </b> {first_name} {last_name} \n"
        caption += f"<b> ٴ╼──────────────────╾ </b>\n"
-       caption += f"<b> • 🌚 | معـرفه  ⇦ </b> {username}\n"
-       caption += f"<b> • 🌚 | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
-       caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
-       caption += f"<b> • 🌚 | نــوعه   ⇦  هايشه 🐄 </b>\n"
-       caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿 𓆪 </b> - @ZThon "
+       caption += f"<b> ❖  | معـرفه  ⇦ </b> {username}\n"
+       caption += f"<b> ❖  | ايـديه   ⇦ </b> <code>{user_id}</code>\n"
+       caption += f"<b> ❖  | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
+       caption += f"<b> ❖  | نــوعه   ⇦  بقرتي 🐄 </b>\n"
+       caption += f"<b> ❖  | نسبتـه  ⇦  {yoy} </b>\n\n\n"
+       caption += f"<b> ❖❖ 𝙎𝙊𝙐𝙍𝘾𝞝 𝐀𝐍𝐘𝐍𝐌𝐔𝐒 𓆪 </b> - @ANENMUS"
        return sts_animal9, caption
 
 
@@ -213,9 +213,9 @@ async def who(event):
     except AttributeError:
         return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص**")
     if replied_user.id in zel_dev:
-       return await edit_or_reply(zed, "**- دي . . انـهُ احـد المطـورين . . انتـه الحيـوان ولك**")
+       return await edit_or_reply(zed, "**- دي . . انـهُ احـد المطـورين . . انت الحيـوان يابجيح**")
     if replied_user.id == 925972505 or replied_user.id == 1895219306 or replied_user.id == 2095357462:
-       return await edit_or_reply(zed, "**- دي . . انـهُ المطـور . . انتـه الحيـوان ولك**")
+       return await edit_or_reply(zed, "**- دي . . انـهُ المطـور . . انت الحيـوان يابجيح**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
