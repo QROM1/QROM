@@ -472,7 +472,6 @@ async def _(event):
         event = await edit_or_reply(event, OUTPUT)
 
 
-"""
 @zedub.zed_cmd(pattern="فاراتي$")
 async def _(event):
     if event.fwd_from:
@@ -504,7 +503,6 @@ async def _(event):
             await event.delete()
     else:
         event = await edit_or_reply(event, OUTPUT)
-"""
 
 @zedub.zed_cmd(pattern="السرعه$")
 async def _(event):
