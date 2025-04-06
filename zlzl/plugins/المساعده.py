@@ -8,7 +8,7 @@ from . import zedub
 
 from ..Config import Config
 from . import mention
-HELP = f"**🧑🏻‍💻┊مـࢪحبـاً عـزيـزي {mention}**\n**🛂┊في قائمـة المسـاعـده والشـروحـات\n🛃┊من هنـا يمكنـك ايجـاد شـرح لكـل اوامـر السـورس**\n\n[ᯓ 𝗭𝗧𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 ♥️](https://t.me/ZThon)\n\n"
+HELP = f"**🧑🏻‍💻┊مـࢪحبـاً عـزيـزي {mention}**\n**🛂┊في قائمـة المسـاعـده والشـروحـات\n🛃┊من هنـا يمكنـك ايجـاد شـرح لكـل اوامـر السـورس**\n\n[ᯓ XX 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 ♥️](https://t.me/ZThon)\n\n"
 
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
@@ -22,7 +22,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await zedub.get_me()
         if query.startswith("مساعده") and event.query.user_id == zedub.uid:
             buttons = [
-                [Button.inline("البـحـث والتحميـل 🪄", data="zdownload")],
+                [Button.inline("البـحـث والتكسيس 🪄", data="zdownload")],
                 [
                     Button.inline("البـوت 🤖", data="botvr"),
                     Button.inline("الحساب🎗", data="acccount"),
