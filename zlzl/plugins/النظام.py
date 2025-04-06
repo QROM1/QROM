@@ -385,60 +385,50 @@ async def librarz(event):
     await edit_or_reply(event, list)
 
 
-import aiohttp
-import os
-from asyncio.subprocess import PIPE as asyncPIPE
-from asyncio.create_subprocess_exec import create_subprocess_exec as asyncrunapp
-
 @zedub.zed_cmd(pattern="مكتبة (.*)")
 async def pipcheck(pip):
     pipmodule = pip.pattern_match.group(1)
     reply_to_id = pip.message.id
     if pip.reply_to_msg_id:
         reply_to_id = pip.reply_to_msg_id
-
-    pip = await edit_or_reply(pip, "**- جـارِ البحث عن المكتبة وتثبيتها ...**")
-
-    # البحث عن المكتبة من PyPI
-    async with aiohttp.ClientSession() as session:
-        async with session.get(f"https://pypi.org/pypi/{pipmodule}/json") as resp:
-            if resp.status == 200:
-                data = await resp.json()
-                info = data.get("info", {})
-                name = info.get("name", pipmodule)
-                version = info.get("version", "غير معروف")
-                summary = info.get("summary", "لا يوجد وصف")
-                home_page = info.get("home_page", f"https://pypi.org/project/{pipmodule}/")
-
-                # محاولة التثبيت
-                install = await asyncrunapp(
-                    "pip3", "install", pipmodule,
-                    stdout=asyncPIPE, stderr=asyncPIPE
+    if pipmodule:
+        pip = await edit_or_reply(pip, "**- جـارِ البحث عن المكتبـه ...**")
+        pipc = await asyncrunapp(
+            "pip3",
+            "search",
+            pipmodule,
+            stdout=asyncPIPE,
+            stderr=asyncPIPE,
+        )
+        stdout, stderr = await pipc.communicate()
+        pipout = str(stdout.decode().strip()) + str(stderr.decode().strip())
+        if pipout:
+            if len(pipout) > 4096:
+                await pip.edit("`Output too large, sending as file`")
+                with open("pips.txt", "w+") as file:
+                    file.write(pipout)
+                await pip.client.send_file(
+                    pip.chat_id,
+                    "pips.txt",
+                    reply_to=reply_to_id,
+                    caption=pipmodule,
                 )
-                stdout, stderr = await install.communicate()
-                output = stdout.decode().strip() + "\n" + stderr.decode().strip()
+                os.remove("output.txt")
+                return
+            await pip.edit(
+                "**❖ المكتبـة المطلوبـه : **\n`"
+                f"pip3 search {pipmodule}"
+                "`\n**• نتيجـة التثبيت : **\n`"
+                f"{pipout}"
+                "`"
+            )
+        else:
+            await pip.edit(
+                "**المكتبـة المطلوبـه : **\n`"
+                f"pip3 search {pipmodule}"
+                "`\n**النتيجـة : **\n`No Result Returned/False`"
+            )
 
-                if len(output) > 3500:
-                    with open("install_output.txt", "w", encoding="utf-8") as f:
-                        f.write(output)
-                    await pip.client.send_file(
-                        pip.chat_id,
-                        "install_output.txt",
-                        caption=f"**تم البحث والتثبيت للمكتبة:** `{pipmodule}`",
-                        reply_to=reply_to_id
-                    )
-                    os.remove("install_output.txt")
-                    return
-
-                await pip.edit(
-                    f"**❖ اسم المكتبة:** `{name}`\n"
-                    f"**• الإصدار:** `{version}`\n"
-                    f"**• الوصف:** `{summary}`\n"
-                    f"**• الرابط:** [اضغط هنا]({home_page})\n\n"
-                    f"**• نتيجة التثبيت:**\n`{output}`"
-                )
-            else:
-                await pip.edit(f"**- لم يتم العثور على مكتبة باسم** `{pipmodule}`")
 
 
 @zedub.zed_cmd(pattern="فرمته(?: |$)(.*)")
